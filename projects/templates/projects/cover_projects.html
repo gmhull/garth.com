@@ -3,7 +3,7 @@
 {% block content %}
 
   {% for project in object_list %}
-    <div class="card rounded col-lg-4 col-md-6 projects-item shadow-sm filter-{{ project.type }}">
+    <div class="card rounded projects-item shadow-sm filter-{{ project.type }}">
       <img src="{{ project.cover_image.url }}" class="img-fluid">
       <div class="projects-info">
         <h4><a href="/projects/{{project.slug}}" style="color:#DA7B93;"> {{project.title}} </a></h4>
