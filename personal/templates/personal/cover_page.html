@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Garth Hull McSweeney">
+  <title>Garth Hull McSweeney</title>
+
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/garths.css' %}" rel="stylesheet">
+  <link href="{% static 'css/test.css' %}" rel="stylesheet">
+  <style>
+    body {
+      background-color: #2e151b;
+      color: #FFF;
+    }
+    #hero {
+      width: 100%;
+      height: 100vh;
+      background: url("{% static 'img/Profile Pic2.jpg' %}") top center;
+      background-size: cover;
+      position: relative;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="body">
+  <header id="header">
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <a href="/" class="navbar-brand" style="color: #99B3FF;">Garth</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEx" aria-controls="navbarEx" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color: #99B3FF;">Menu</span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarEx">
+        <ul class="nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projects/">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="hero-container">
+      <h1>Garth's Website</h1>
+      <h2>Scroll to learn more</h2>
+    </div>
+  </section>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-7 order-1">
+            <h1 class="section-title">About Me:</h1>
+            <hr>
+            <h3>Howdy</h3>
+            <p class="description">
+              I studied Mechanical Engineering at Worcester Polytechinc Institute,
+              where I earned my Bachelor and Master degrees. During my four years
+              in Worcester, I was able to meet many great people, and be a part
+              of some fantastic experiences.  I was able to travel across the
+              world to Albania for several months to study a cultural dress,
+              participate in collegiate athletics on the track team, and make
+              many new friends along the way.<br><br>
+              I love exploring the outdoors.  Whether biking, hiking, backpacking,
+              running, climbing or pick up games, I am ready to go.<br><br>
+              When I am not outside, I have been pursuing interests in 3D printing,
+              learning python, robotics, electronics, and woodworking.
+            </p>
+          </div>
+          <div class="col-md-5 order-2">
+            <h2>I made some Donkey friends in Albania</h2>
+            <img class="img-fluid" src="{% static 'img/Albanian Donkeys.JPG' %}" alt="Responsive image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="break">
+      <div class="container" style="background-color: #da7b93;">
+        <hr>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Projects:</h1>
+        </div>
+        <div class="row" id="projects-flters">
+          <div class="button-group col-lg-12 d-flex justify-content-center">
+            <button data-filter="*" class="is-checked">All</button>
+            <button data-filter=".filter-ME">Engineering</button>
+            <button data-filter=".filter-CS">Coding</button>
+            <button data-filter=".filter-PE">Personal</button>
+            <button data-filter=".filter-OT">Other</button>
+          </div>
+        </div>
+
+        <div class="row projects-container grid">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="ideas">
+      <h1>Howdy. Have some ideas.</h1>
+      <h2>Make lasers come out of my eyes and follow the cursor on the page</h2>
+      <h2>spinning sections</h2>
+      <br>
+      <h3><b>Things to be done:</b><br>Complete the projects pages,
+        <br>work on base index page for content and about, <br>add content,<br> organize code</h3>
+    </section> -->
+
+  </main>
+
+  <footer id="contact" style="background: #376E6F;">
+    <div class="container" style="text-align: center;">
+      <p>You can contact me at gmhull@wpi.edu</p>
+      <p>This website was designed and built from scratch by me.</p>
+      <p><a href="https://www.linkedin.com/in/garth-mcsweeney-39aa99150/">LinkedIn</a>, <a href="https://github.com/gmhull">Github</a>  </p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/garth.js' %}"></script>
+
+</body>
+
+</html>

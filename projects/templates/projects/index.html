@@ -1,0 +1,22 @@
+{% extends "personal/index.html" %}
+
+{% block content %}
+
+  {% for project in object_list %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 projects-item">
+          <img src="{{ project.cover_image.url }}" alt="" class="img-fluid">
+        </div>
+        <div class="col-lg-8 col-md-6 projects-item">
+          <div class="projects-info">
+            <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
+            <p>{{ project.body|safe|truncatewords:80 }}</p>
+            <p>{{ project.date|date:"m-d-Y" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}

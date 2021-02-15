@@ -1,0 +1,24 @@
+{% extends "personal/index.html" %}
+
+{% block title %}
+<section id="cover" class="d-flex flex-column justify-content-center" style="background: url('{{ project.cover_image.url }}') center center;
+      background-attachment: fixed; width: 100%; height: 80vh; background-size: cover; position: relative;">
+  <div class="cover-container">
+    <h1>{{project.title}}</h1>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<h3>On {{project.date}}</h3>
+{{project.body|safe|truncatewords:50}}
+<img src="{{ project.img.url }}" alt="" class="img-fluid">
+{{project.body2|safe|linebreaks}}
+<img src="{{ project.img2.url }}" alt="" class="img-fluid">
+{{project.body3|safe|linebreaks}}
+<img src="{{ project.img3.url }}" alt="" class="img-fluid">
+{{project.body4|safe|linebreaks}}
+<img src="{{ project.img4.url }}" alt="" class="img-fluid">
+{{project.body5|safe|linebreaks}}
+<img src="{{ project.img5.url }}" alt="" class="img-fluid">
+{% endblock %}
