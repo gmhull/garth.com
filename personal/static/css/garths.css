@@ -46,6 +46,9 @@
 @media (max-width: 1024px) {
   #hero {
     background-attachment: scroll;
+    background-size: auto 100%;
+    /* position: 50% 50%; */
+    background-repeat: no-repeat;
   }
 }
 
@@ -192,8 +195,8 @@
 #projects .card {
   background-color: inherit;
   border: #000;
-  /* width: 30%; */
-  height: auto;
+  width: auto;
+  /* height: auto; */
   margin: 5px;
 }
 
@@ -228,7 +231,7 @@
   transition: all ease-in-out 0.3s;
   background: #2F4454;
   width: 100%;
-  /* padding: 15px 20px; */
+  padding: 15px 20px;
 }
 
 #projects .projects-item .projects-info h4 {
@@ -269,6 +272,14 @@
   font-size: 80px;
   font-weight: 200;
   font-family: fantasy;
+}
+
+@media (max-width: 768px) {
+  #cover .cover-container h1 {
+    font-size: 40px;
+    font-weight: 200;
+    font-family: fantasy;
+  }
 }
 
 #cover:before {
