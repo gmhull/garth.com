@@ -8,14 +8,6 @@
 # Navbar Section
 --------------------------------------------------------------*/
 
-/* .navbar-brand {
-  color: #659dbd;
-} */
-
-/* #header .navbar {
-  background-color: rgba(0, 255, 0, 0.2);
-} */
-
 .nav a {
   color: #99B3FF;
   font-weight: 400;
@@ -51,9 +43,9 @@
 # Hero Section
 --------------------------------------------------------------*/
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   #hero {
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 }
 
@@ -78,8 +70,6 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  /* padding-right:
-  padding-top: 300px; */
 }
 
 @media (max-width: 768px) {
