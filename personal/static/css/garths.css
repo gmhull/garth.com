@@ -370,15 +370,26 @@
 }
 
 #skills .flip-card {
-  /* background-color: #2f4454; */
   width: 28%;
   margin-left: 2.6%;
   margin-right: 2.6%;
   margin-bottom: 30px;
   background-color: transparent;
-  /* width: 300px; */
   height: 200px;
   perspective: 1000px;
+}
+
+@media (max-width: 768px) {
+  #skills .flip-card {
+    background-color: transparent;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-bottom: 10px;
+    background-color: transparent;
+    height: 200px;
+    perspective: 1000px;
+  }
 }
 
 #skills .flip-card-front {
@@ -419,6 +430,15 @@
   padding-top: 15px;
 }
 
+@media (max-width: 768px) {
+  #skills .card-body .card-description {
+    color: #FFF;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 15px;
+  }
+}
+
 #skills .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -429,15 +449,6 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-}
-
-@media (max-width: 724px) {
-  #skills .flip-card {
-    background-color: #DA7B93;
-    width: 75%;
-    margin-left: 12.5%;
-    margin-right: 12.5%;
-  }
 }
 
 /*--------------------------------------------------------------
