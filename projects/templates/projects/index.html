@@ -11,8 +11,8 @@
         <div class="col-lg-8 col-md-6 projects-item">
           <div class="projects-info">
             <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
-            <p>{{ project.body|safe|truncatewords:80 }}</p>
-            <p>{{ project.date|date:"m-d-Y" }}</p>
+            <p>{{ project.body|safe|truncatewords:40 }}</p>
+            <p>{{ project.type }}, <i>{{ project.date|date:"m-d-Y" }}</i></p>
           </div>
         </div>
       </div>

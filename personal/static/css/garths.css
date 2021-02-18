@@ -56,8 +56,8 @@
   #hero {
     width: 100%;
     height: 100vh;
-    background: url("../img/Profile Pic Mobile.jpg") center right;
-    background-size: auto 100%;
+    background: url("../img/Profile Pic Mobile.jpg") center center;
+    background-size: cover;
     position: relative;
     background-attachment: scroll;
   }
@@ -361,6 +361,16 @@
   background: #2F4454;
 }
 
+#content .projects-item h4 {
+  font-size: 40px;
+  color: #99B3FF;
+}
+
+#content .projects-item p {
+  font-size: 25px;
+  color: #FFF;
+}
+
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
@@ -386,25 +396,9 @@
     margin-left: 12.5%;
     margin-right: 12.5%;
     margin-bottom: 10px;
-    background-color: transparent;
-    height: 200px;
+    height: 250px;
     perspective: 1000px;
   }
-}
-
-#skills .flip-card-front {
-  background-color: inherit;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  border: 1px solid #f1f1f1;
-}
-
-#skills .flip-card-back {
-  background-color: inherit;
-  color: white;
-  transform: rotateY(180deg);
-  padding: 20px;
-  border: 1px solid #f1f1f1;
 }
 
 #skills .flip-card-inner {
@@ -415,40 +409,55 @@
   transition: transform 0.8s;
   transform-style: preserve-3d;
   background-color: #1c3334;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: visible;
 }
 
-#skills .card-body .card-title {
-  color: #FFF;
-  font-size: 30px;
-  padding-top: 10px;
-}
-
-#skills .card-body .card-description {
-  color: #FFF;
-  font-size: 15px;
-  text-align: center;
-  padding-top: 15px;
-}
-
-@media (max-width: 768px) {
-  #skills .card-body .card-description {
-    color: #FFF;
-    font-size: 10px;
-    text-align: center;
-    padding-top: 15px;
-  }
-}
-
-#skills .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-#skills .flip-card-front, #skills .flip-card-back {
+#skills .flip-card-front {
+  background-color: inherit;
+  border: 1px solid #f1f1f1;
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+}
+
+#skills .flip-card-back {
+  background-color: inherit;
+  transform: rotateY(180deg);
+  padding: 5px;
+  border: 1px solid #f1f1f1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+#skills .card-title {
+  width: 100%;
+  height: auto;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#skills .card-description {
+  width: 80%;
+  height: auto;
+  margin: 0;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#skills .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
 /*--------------------------------------------------------------
