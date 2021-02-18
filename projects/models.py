@@ -3,10 +3,10 @@ from django.template.defaultfilters import slugify
 
 class Project(models.Model):
     PROJECT_TOPICS = [
-        ('ME', 'Engineering'),
-        ('CS', 'Programming'),
-        ('PE', 'Personal'),
-        ('OT', 'Other')
+        ('Engineering', 'Engineering'),
+        ('Programming', 'Programming'),
+        ('Personal', 'Personal'),
+        ('Other', 'Other')
     ]
 
     title = models.CharField(max_length=140)
