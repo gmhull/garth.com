@@ -19,11 +19,11 @@ class Project(models.Model):
     body3 = models.TextField(blank=True, null=True)
     body4 = models.TextField(blank=True, null=True)
     body5 = models.TextField(blank=True, null=True)
-    img = models.ImageField(blank=True, null=True)
-    img2 = models.ImageField(blank=True, null=True)
-    img3 = models.ImageField(blank=True, null=True)
-    img4 = models.ImageField(blank=True, null=True)
-    img5 = models.ImageField(blank=True, null=True)
+    img = models.ImageField(default="Default.png")
+    img2 = models.ImageField(default="Default.png")
+    img3 = models.ImageField(default="Default.png")
+    img4 = models.ImageField(default="Default.png")
+    img5 = models.ImageField(default="Default.png")
 
     def __str__(self):
         return self.title
