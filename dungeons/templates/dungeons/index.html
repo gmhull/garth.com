@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Garth Hull McSweeney">
+  <title>Roll Initiative</title>
+
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/garths.css' %}" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #000000;
+      color: #FFF;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <header id="header">
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: transparent; justify: center;">
+      <a href="/" class="navbar-brand" style="color: #99B3FF;">Dungeons & Dragons</a>
+    </nav>
+  </header> -->
+
+  <section id="dungeons">
+    <div class="row h-50 w-100">
+      <div class="col-md-6">
+        <img class="img-fluid center rounded-circle" src="{% static 'img/hedyn_epic.png' %}" alt="Responsive image">
+      </div>
+      <div class="col-md-6">
+        <img class="img-fluid center rounded-circle" src="{% static 'img/khell_epic.png' %}" alt="Responsive image">
+      </div>
+    </div>
+    <div class="row h-50 w-100">
+      <div class="col-md-6">
+        <img class="img-fluid center rounded-circle" src="{% static 'img/roan_epic.png' %}" alt="Responsive image">
+      </div>
+      <div class="col-md-6">
+        <img class="img-fluid center rounded-circle" src="{% static 'img/sol_epic.png' %}" alt="Responsive image">
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/garth.js' %}"></script>
+
+</body>
+</html>

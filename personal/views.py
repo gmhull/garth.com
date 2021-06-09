@@ -10,5 +10,5 @@ def contact(request):
 def about(request):
     return render(request, 'personal/about.html')
 
-# def trythis(request):
-#     return render(request, 'personal/trythis.html')
+def trythis(request):
+    return render(request, 'dungeons/index.html')

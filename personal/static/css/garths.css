@@ -559,3 +559,28 @@
 #interests p {
   color: #FFF;
 }
+
+/*--------------------------------------------------------------
+# Dungeons
+--------------------------------------------------------------*/
+
+#dungeons {
+  color: #FFF;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+}
+
+#dungeons .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

@@ -7,5 +7,5 @@ urlpatterns = [
     path('', ListView.as_view(queryset=Project.objects.all().order_by("-date")[:25],template_name="projects/cover_projects.html")),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
-    # path('trythis/', views.trythis, name='trythis'),
+    path('trythis/', views.trythis, name='trythis'),
 ]
