@@ -28,9 +28,9 @@ DEBUG = (os.environ.get('DJANGO_DEBUG') == "True")
 
 ALLOWED_HOSTS = ['garthdotcom.herokuapp.com', '.localhost', '127.0.0.1', '.garths.world']
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     'personal',
