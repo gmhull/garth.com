@@ -2,13 +2,11 @@
 {% load static %}
 
 {% block title %}
-<div class="container" style="padding-top: 70px;">
-  <h1 style='color: #99B3FF'>Howdy, welcome to the website!</h1>
-  <p>I built this website in my free time as a way to document the work that I am doing.
-    Coming out of university I want to keep learning new skills.  Here I'll be able
-    to look back and see all of the things that I have worked on.  Not all the project
-    are exciting, but anything that I felt excited about can get uploaded and shared
-    to anyone interested.  Thanks for stopping by!
+<div class="container col-8" style="padding-top: 70px;">
+  <h1 style='color: #99B3FF'>Welcome to the website!</h1>
+  <p>After graduating, I wanted to keep learning.  I built this website as a place where I
+    can share these projects.  Not all the projects are exciting, but hopefully someone finds
+    something on here interesting.  Thanks for stopping by!
   </p>
 </div>
 <hr style="background-color: #da7b93;">
@@ -20,17 +18,33 @@
 <section id="about_me">
   <h1>Who am I?</h1>
   <div class="row">
-    <div class="col-8">
+    <div class="col-6">
       <p>
-        What a great question.  On the outside, I am 23 years old, just graduating
-        from WPI, starting out my career in Jaffrey, NH.
+        My name is Garth and I am a 23 year old recent college graduate living in NH.  I
+        studied at Worcester Polytechnic Institute where I earned my Masters and Bachelors
+        in mechanical engineering.  Currently I am working at MilliporeSigma as a Process
+        Engineer for the Pellicon 3 line of filters.
+        <br>
       </p>
+      <section id="interests">
+        <p>
+          Since graduation I have been working on projects to keep myself busy an motivated
+          to learn.  I started teaching myself Python (how I made this website), have done
+          solidworks modeling for various personal projects, and worked a lot with my 3D printer
+          for quick prototyping of my work.  Check out some of the projecs on this website!
+          <br>
+          Other than this, I am passionate about the outdoors.  I love all kinds of sports, hiking
+          or just exploring.  I competed in collegiate track and field at WPI, but I have also head
+          a lot of fun with soccer, badminton, bouldering, baseball, and vollyball.
+        </p>
+      </section>
     </div>
     <div class="col-4">
       <img src="{% static 'img/Scar Face.JPG' %}" style="width: 100%;">
     </div>
   </div>
 </section>
+
 
 <hr style="background-color: #da7b93;">
 
@@ -198,19 +212,19 @@
         <h4>Engineering Intern</h4>
         <h5>May - August, 2018</h5>
         <p><i>Boston Dynamics - Waltham, MA</i></p>
-        <p>
-          Worked with the Handle perception team on a robotic vision system.
-          Helped create a neural network to allow Handle to detect boxes in front of it.
-        </p>
+        <ul>
+          <li>Worked with the Handle perception team on a robotic vision system.</li>
+          <li>Helped create a neural network to allow Handle to detect boxes in front of it.</li>
+        </ul>
       </div>
       <div class="experience-item">
         <h4>Loan Servicing Intern</h4>
         <h5>May - August, (2015-2017, 2019)</h5>
         <p><i>Leader Bank - Arlington, MA</i></p>
-        <p>
-          Worked in the loan servicing department to organize file systems and
-          communicate with third party insurance companies.
-        </p>
+        <ul>
+          <li>Worked in the loan servicing department to organize file systems and
+          communicate with third party insurance companies.</li>
+        </ul>
       </div>
     </div>
     <div class="col-md-6 col-sm-12">
@@ -236,17 +250,5 @@
 </section>
 
 <hr style="background-color: #da7b93;">
-
-<section id="interests">
-  <h1>Personal interests</h1>
-  <p>After graduation I wanted to make sure I continued to work on projects
-    in my personal time.  I have started getting into robotics and coding, along with
-    woodworking and others.  <br>
-    Other than this, I am passionate about the outdoors, whether sports, hiking or just exploring.
-    Sports have been a large part of my life between playing and watching.  I competed
-    in collegiate track and field with other experience in soccer, badminton, bouldering, baseball,
-    and vollyball.  I love watching less popular sports.
-  </p>
-</section>
 
 {% endblock %}
