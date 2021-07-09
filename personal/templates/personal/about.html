@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-<div class="container col-8" style="padding-top: 70px;">
+<div class="container col-6" style="padding-top: 70px;">
   <h1 style='color: #99B3FF'>Welcome to the website!</h1>
   <p>After graduating, I wanted to keep learning.  I built this website as a place where I
     can share these projects.  Not all the projects are exciting, but hopefully someone finds
@@ -18,7 +18,10 @@
 <section id="about_me">
   <h1>Who am I?</h1>
   <div class="row">
-    <div class="col-6">
+    <div class="col-2">
+      <!-- Spacing -->
+    </div>
+    <div class="col-6 order-1">
       <p>
         My name is Garth and I am a 23 year old recent college graduate living in NH.  I
         studied at Worcester Polytechnic Institute where I earned my Masters and Bachelors
@@ -39,8 +42,11 @@
         </p>
       </section>
     </div>
-    <div class="col-4">
+    <div class="col-4 order-2">
       <img src="{% static 'img/Scar Face.JPG' %}" style="width: 100%;">
+    </div>
+    <div class="col-2">
+      <!-- Spacing -->
     </div>
   </div>
 </section>
