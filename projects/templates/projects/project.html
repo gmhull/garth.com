@@ -13,11 +13,12 @@
 {% block content %}
 <h3>On {{project.date}}</h3>
 
+<!-- Could work on ordering this properly on mobile -->
 <div class="row">
-  <div class="col-7 order-1">
+  <div class="col-7">
     {{project.body|safe|linebreaks}}
   </div>
-  <div class="col-5 order-2">
+  <div class="col-5">
     <img src="{{ project.img.url }}" alt="" class="img-fluid">
   </div>
 </div>
@@ -32,28 +33,28 @@
 </div>
 
 <div class="row">
-  <div class="col-7 order-1">
+  <div class="col-7">
     {{project.body3|safe|linebreaks}}
   </div>
-  <div class="col-5 order-2">
+  <div class="col-5">
     <img src="{{ project.img3.url }}" alt="" class="img-fluid">
   </div>
 </div>
 
 <div class="row">
-  <div class="col-5 order-2">
+  <div class="col-5">
     <img src="{{ project.img4.url }}" alt="" class="img-fluid">
   </div>
-  <div class="col-7 order-1">
+  <div class="col-7">
     {{project.body4|safe|linebreaks}}
   </div>
 </div>
 
 <div class="row">
-  <div class="col-7 order-1">
+  <div class="col-7">
     {{project.body5|safe|linebreaks}}
   </div>
-  <div class="col-5 order-2">
+  <div class="col-5">
     <img src="{{ project.img5.url }}" alt="" class="img-fluid">
   </div>
 </div>
