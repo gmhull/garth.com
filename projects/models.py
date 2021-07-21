@@ -13,6 +13,7 @@ class Project(models.Model):
     slug = models.SlugField(max_length=140, unique=True, null=False)
     type = models.CharField(max_length=15, choices=PROJECT_TOPICS, default='PE')
     date = models.DateTimeField()
+    # Make this a date field only
     body = models.TextField()
     cover_image = models.ImageField()
     body2 = models.TextField(blank=True, null=True)
