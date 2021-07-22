@@ -144,11 +144,17 @@ AWS_DEFAULT_ACL = 'public-read'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'personal/static'),
 ]
-# Provide a url for static and media files
-# STATIC_URL = '/static/'
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# Provide a url for media files
 MEDIA_URL = 'https://%s/media/' % (AWS_S3_CUSTOM_DOMAIN)
 
-# This controles where files are stored
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# Control where default files are stored
 DEFAULT_FILE_STORAGE = 'garthdotcom.storage_backends.MediaStorage'
+
+# Local vs. Prod Settings
+if os.environ.get('Local') == 'True':
+    STATIC_URL = '/static/'
+else:
+    # Provide a url for static files
+    STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    # Control where static files are stored
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
