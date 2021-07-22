@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'garthdotcom.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # Change this database to be the heroku one
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
