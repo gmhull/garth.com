@@ -8,7 +8,7 @@ class Project(models.Model):
         ('Personal', 'Personal'),
         ('Other', 'Other')
     ]
-
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=140)
     slug = models.SlugField(max_length=140, unique=True, null=False)
     type = models.CharField(max_length=15, choices=PROJECT_TOPICS, default='PE')
