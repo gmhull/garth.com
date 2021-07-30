@@ -6,5 +6,7 @@ from dungeons.models import Level
 
 urlpatterns = [
     path('', views.dnd_main, name='dnd_main'),
+    path('map', views.map, name='map'),
+    path('gauntlet', views.gauntlet, name='gauntlet'),
     path('floor_<slug:slug>', FloorDetailView.as_view(), name='floor_detail')
 ]

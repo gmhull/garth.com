@@ -6,7 +6,8 @@ class Level(models.Model):
     title = models.CharField(max_length=30)
     floor_number = models.CharField(max_length=2)
     slug = models.SlugField(max_length=10, null=False, unique=True)
-    map = models.ImageField()
+    map = models.ImageField(upload_to='dnd')
+    color = models.CharField(max_length=10, default="black")
 
     def __str__(self):
         return self.title

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -20,37 +21,33 @@
 </head>
 
 <body>
-
-  <!-- <header id="header">
-    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: transparent; justify: center;">
-      <a href="/" class="navbar-brand" style="color: #99B3FF;">Dungeons & Dragons</a>
-    </nav>
-  </header> -->
-
-  <section id="dungeons">
-    <div class="row h-50 w-100">
-      <div class="col-md-6">
-        <img class="img-fluid center rounded-circle" src="{% static 'img/hedyn_epic.png' %}" alt="Responsive image">
-      </div>
-      <div class="col-md-6">
-        <img class="img-fluid center rounded-circle" src="{% static 'img/khell_epic.png' %}" alt="Responsive image">
-      </div>
+<header id="header">
+  <nav class="navbar navbar-expand-sm fixed-top">
+    <a href="./" class="navbar-brand" style="color: #99B3FF;">Welcome to Garth's World!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEx" aria-controls="navbarEx" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="color: #99B3FF; margin-right: 15px;">Menu</span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarEx">
+      <ul class="nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./map">Map!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./gauntlet">The Gauntlet!</a>
+        </li>
+      </ul>
     </div>
-    <div class="row h-50 w-100">
-      <div class="col-md-6">
-        <img class="img-fluid center rounded-circle" src="{% static 'img/roan_epic.png' %}" alt="Responsive image">
-      </div>
-      <div class="col-md-6">
-        <img class="img-fluid center rounded-circle" src="{% static 'img/sol_epic.png' %}" alt="Responsive image">
-      </div>
-    </div>
-  </section>
+  </nav>
+</header>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'js/garth.js' %}"></script>
+{% block content %}
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/garth.js' %}"></script>
 
 </body>
 </html>

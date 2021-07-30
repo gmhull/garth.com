@@ -1,0 +1,37 @@
+{% extends "dungeons/index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container vertical-center d-flex flex-column justify-content-center">
+  <div id="gauntletCarouselControls" class="carousel" data-interval="False">
+    <ol class="carousel-indicators">
+      <li data-target="#gauntletCarouselControls" data-slide-to="0" class="active"></li>
+      <li data-target="#gauntletCarouselControls" data-slide-to="1"></li>
+      <li data-target="#gauntletCarouselControls" data-slide-to="2"></li>
+      <li data-target="#gauntletCarouselControls" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" style="height: 10vh; width: 75vw; text-align: center;">
+      <div class="carousel-item active">
+        <p>The gauntlet is a series of challenges designed challenge all that enter.</p>
+      </div>
+      <div class="carousel-item">
+        <p>Complete the challenge, collect the special token, and advance to the exit to proceed.</p>
+      </div>
+      <div class="carousel-item">
+        <p>You may exit the gauntlet at any point.</p>
+      </div>
+      <div class="carousel-item">
+        <p><a href="./floor_1" style="color:white;">Enter</a></p>
+      </div>
+    </div>
+    <!-- <a class="carousel-control-prev" href="#gauntletCarouselControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#gauntletCarouselControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a> -->
+  </div>
+</div>
+{% endblock %}

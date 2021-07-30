@@ -11,51 +11,53 @@
 {% endblock %}
 
 {% block content %}
-<h3>On {{project.date}}</h3>
+<div id="project_page">
+  <h3>On {{project.date}}</h3>
 
-<!-- Could work on ordering this properly on mobile -->
-<div class="row">
-  <div class="col-7">
-    {{project.body|safe|linebreaks}}
+  <!-- Could work on ordering this properly on mobile -->
+  <div class="row justify-content-center">
+    <div class="col-sm-7 project-txt-col">
+      {{project.body|safe|linebreaks}}
+    </div>
+    <div class="col-sm-5 project-img-col">
+      <img src="{{ project.img.url }}" alt="" class="project-img">
+    </div>
   </div>
-  <div class="col-5">
-    <img src="{{ project.img.url }}" alt="" class="img-fluid">
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-5">
-    <img src="{{ project.img2.url }}" alt="" class="img-fluid">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-7 project-txt-col">
+      {{project.body2|safe|linebreaks}}
+    </div>
+    <div class="col-sm-5 project-img-col">
+      <img src="{{ project.img2.url }}" alt="" class="project-img">
+    </div>
   </div>
-  <div class="col-7">
-    {{project.body2|safe|linebreaks}}
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-7">
-    {{project.body3|safe|linebreaks}}
+  <div class="row justify-content-md-center">
+    <div class="col-sm-7 project-txt-col">
+      {{project.body3|safe|linebreaks}}
+    </div>
+    <div class="col-sm-5 project-img-col">
+      <img src="{{ project.img3.url }}" alt="" class="project-img">
+    </div>
   </div>
-  <div class="col-5">
-    <img src="{{ project.img3.url }}" alt="" class="img-fluid">
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-5">
-    <img src="{{ project.img4.url }}" alt="" class="img-fluid">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-7 project-txt-col">
+      {{project.body4|safe|linebreaks}}
+    </div>
+    <div class="col-sm-5 project-img-col">
+      <img src="{{ project.img4.url }}" alt="" class="project-img">
+    </div>
   </div>
-  <div class="col-7">
-    {{project.body4|safe|linebreaks}}
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-7">
-    {{project.body5|safe|linebreaks}}
-  </div>
-  <div class="col-5">
-    <img src="{{ project.img5.url }}" alt="" class="img-fluid">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-7 project-txt-col">
+      {{project.body5|safe|linebreaks}}
+    </div>
+    <div class="col-sm-5 project-img-col">
+      <img src="{{ project.img5.url }}" alt="" class="project-img">
+    </div>
   </div>
 </div>
 
