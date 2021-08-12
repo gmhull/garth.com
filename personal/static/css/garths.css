@@ -541,8 +541,14 @@
 --------------------------------------------------------------*/
 
 #project_page .project-img {
-  height: 250px;
-  width: auto;
+  height: auto;
+  width: 90%;
+  margin: 10px 0 10px 0;
+}
+
+#project_page .project-img-large {
+  height: auto;
+  width: 75%;
   margin: 10px 0 10px 0;
 }
 

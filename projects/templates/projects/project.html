@@ -1,4 +1,4 @@
-{% extends "personal/index.html" %}
+body{% extends "personal/index.html" %}
 {% load static %}
 
 {% block title %}
@@ -15,7 +15,21 @@
   <h3>On {{project.date}}</h3>
 
   <!-- Could work on ordering this properly on mobile -->
-  <div class="row justify-content-center">
+  {% if project.img.name == "Default.png" and project.body == "" %}
+  {% elif project.img.name == "Default.png" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-txt-col">
+      {{project.body|safe|linebreaks}}
+    </div>
+  </div>
+  {% elif project.body == "" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-img-col">
+      <img src="{{ project.img.url }}" alt="" class="project-img-large">
+    </div>
+  </div>
+  {% else %}
+  <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body|safe|linebreaks}}
     </div>
@@ -23,7 +37,22 @@
       <img src="{{ project.img.url }}" alt="" class="project-img">
     </div>
   </div>
+  {% endif %}
 
+  {% if project.img2.name == "Default.png" and project.body2 == "" %}
+  {% elif project.img2.name == "Default.png" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-txt-col">
+      {{project.body2|safe|linebreaks}}
+    </div>
+  </div>
+  {% elif project.body2 == "" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-img-col">
+      <img src="{{ project.img2.url }}" alt="" class="project-img-large">
+    </div>
+  </div>
+  {% elif project.body2 != "" %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body2|safe|linebreaks}}
@@ -32,7 +61,22 @@
       <img src="{{ project.img2.url }}" alt="" class="project-img">
     </div>
   </div>
+  {% endif %}
 
+  {% if project.img3.name == "Default.png" and project.body3 == "" %}
+  {% elif project.img3.name == "Default.png" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-txt-col">
+      {{project.body3|safe|linebreaks}}
+    </div>
+  </div>
+  {% elif project.body3 == "" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-img-col">
+      <img src="{{ project.img3.url }}" alt="" class="project-img-large">
+    </div>
+  </div>
+  {% elif project.body3 != "" %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body3|safe|linebreaks}}
@@ -41,7 +85,22 @@
       <img src="{{ project.img3.url }}" alt="" class="project-img">
     </div>
   </div>
+  {% endif %}
 
+  {% if project.img4.name == "Default.png" and project.body4 == "" %}
+  {% elif project.img4.name == "Default.png" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-txt-col">
+      {{project.body4|safe|linebreaks}}
+    </div>
+  </div>
+  {% elif project.body4 == "" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-img-col">
+      <img src="{{ project.img4.url }}" alt="" class="project-img-large">
+    </div>
+  </div>
+  {% elif project.body4 != "" %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body4|safe|linebreaks}}
@@ -50,7 +109,22 @@
       <img src="{{ project.img4.url }}" alt="" class="project-img">
     </div>
   </div>
+  {% endif %}
 
+  {% if project.img5.name == "Default.png" and project.body5 == "" %}
+  {% elif project.img5.name == "Default.png" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-txt-col">
+      {{project.body5|safe|linebreaks}}
+    </div>
+  </div>
+  {% elif project.body5 == "" %}
+  <div class="row justify-content-md-center">
+    <div class="col-sm project-img-col">
+      <img src="{{ project.img5.url }}" alt="" class="project-img-large">
+    </div>
+  </div>
+  {% elif project.body5 != "" %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body5|safe|linebreaks}}
@@ -59,6 +133,7 @@
       <img src="{{ project.img5.url }}" alt="" class="project-img">
     </div>
   </div>
+  {% endif %}
 </div>
 
 {% endblock %}
