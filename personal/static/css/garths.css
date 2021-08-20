@@ -558,9 +558,22 @@
 }
 
 #project_page .project-txt-col {
-  display: flex;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+#project_page p {
+  /* text-indent: 30px; */
+  color: #99B3FF;
+}
+
+#project_page ol {
+  text-align: left;
+  color: #99B3FF;
+}
+
+#project_page ul {
+  text-align: left;
+  color: #99B3FF;
 }
 
 /*--------------------------------------------------------------

@@ -52,7 +52,7 @@ body{% extends "personal/index.html" %}
       <img src="{{ project.img2.url }}" alt="" class="project-img-large">
     </div>
   </div>
-  {% elif project.body2 != "" %}
+  {% else %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body2|safe|linebreaks}}
@@ -76,7 +76,7 @@ body{% extends "personal/index.html" %}
       <img src="{{ project.img3.url }}" alt="" class="project-img-large">
     </div>
   </div>
-  {% elif project.body3 != "" %}
+  {% else %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body3|safe|linebreaks}}
@@ -100,7 +100,7 @@ body{% extends "personal/index.html" %}
       <img src="{{ project.img4.url }}" alt="" class="project-img-large">
     </div>
   </div>
-  {% elif project.body4 != "" %}
+  {% else %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body4|safe|linebreaks}}
@@ -124,7 +124,7 @@ body{% extends "personal/index.html" %}
       <img src="{{ project.img5.url }}" alt="" class="project-img-large">
     </div>
   </div>
-  {% elif project.body5 != "" %}
+  {% else %}
   <div class="row justify-content-md-center">
     <div class="col-sm-7 project-txt-col">
       {{project.body5|safe|linebreaks}}
