@@ -312,7 +312,8 @@
 
 #cover:before {
   content: "";
-  background: rgba(55, 110, 111, 0.4);
+  background-image: linear-gradient(rgba(55, 110, 111, 0.5), rgba(55, 110, 111, 0.4),
+                                    rgba(55, 110, 111, 0.3), rgba(55, 110, 111, 0.0));
   position: absolute;
   bottom: 0;
   top: 0;
@@ -347,6 +348,11 @@
 }
 
 #content p {
+  text-align: left;
+  color: #99B3FF;
+}
+
+#content .intro p {
   text-align: left;
   color: #99B3FF;
   font-size: 25px;
