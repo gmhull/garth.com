@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Garth Hull McSweeney">
-  <title>Roll Initiative</title>
+  <title>{% block title %}Roll Initiative!{% endblock %}</title>
 
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/garths.css' %}" rel="stylesheet">
@@ -18,6 +18,17 @@
       height: 100%;
     }
   </style>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17M7ZNQTD7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-17M7ZNQTD7');
+  </script>
+
 </head>
 
 <body>
