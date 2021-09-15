@@ -299,21 +299,21 @@
 #cover .cover-container h1 {
   font-size: 80px;
   font-weight: 200;
-  font-family: fantasy;
+  font-family: serif;
 }
 
 @media (max-width: 768px) {
   #cover .cover-container h1 {
     font-size: 40px;
     font-weight: 200;
-    font-family: fantasy;
+    font-family: serif;
   }
 }
 
 #cover:before {
   content: "";
-  background-image: linear-gradient(rgba(55, 110, 111, 0.5), rgba(55, 110, 111, 0.4),
-                                    rgba(55, 110, 111, 0.3), rgba(55, 110, 111, 0.0));
+  background-image: linear-gradient(rgba(55, 110, 111, 0.4), rgba(55, 110, 111, 0.3),
+                                    rgba(55, 110, 111, 0.2), rgba(55, 110, 111, 0.0));
   position: absolute;
   bottom: 0;
   top: 0;

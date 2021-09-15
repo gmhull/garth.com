@@ -5,6 +5,33 @@
 {{project.title}}
 {% endblock %}
 
+{% block background %}
+<style media="screen">
+  #cover {
+    background: url("{{ project.cover_image.url }}") center center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 80vh;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  @media (max-width: 768px) {
+    #cover {
+      background: url("{{ project.cover_image.url }}") top center;
+      background-attachment: fixed;
+      width: 100%;
+      height: 40vh;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-top: 50px;
+    }
+  }
+</style>
+{% endblock %}
+
+
 {% block heading %}
 <section id="cover" class="d-flex flex-column justify-content-center">
   <div class="cover-container">
