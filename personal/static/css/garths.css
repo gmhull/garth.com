@@ -329,6 +329,8 @@
   margin-bottom: 10px;
   overflow: hidden;
   background-color: #FFF;
+  display: flex;
+  align-items: center;
 }
 
 #content .img-fluid {
@@ -370,6 +372,30 @@
 #content .projects-item p {
   font-size: 25px;
   color: #FFF;
+}
+
+@media (max-width: 768px) {
+  #content .intro p {
+    text-align: left;
+    color: #99B3FF;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  #content h1 {
+    color: #FFF;
+    text-align: center;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  #content .projects-item h4 {
+    color: #FFF;
+    text-align: center;
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -549,7 +575,7 @@
 
 #project_page .project-img-large {
   height: auto;
-  width: 75%;
+  width: 100%;
   margin: 10px 0 10px 0;
 }
 

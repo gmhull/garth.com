@@ -15,7 +15,7 @@ Garth's Projects
   </div>
 
   {% for project in object_list %}
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="row">
         <div class="col-lg-4 col-md-6 projects-item">
           <img src="{{ project.cover_image.url }}" alt="" class="img-fluid">
@@ -28,7 +28,7 @@ Garth's Projects
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   {% endfor %}
 
 {% endblock %}
