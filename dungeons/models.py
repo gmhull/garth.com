@@ -10,4 +10,4 @@ class Level(models.Model):
     color = models.CharField(max_length=10, default="black")
 
     def __str__(self):
-        return self.title
+        return self.title    

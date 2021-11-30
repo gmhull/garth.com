@@ -12,6 +12,10 @@ def map(request):
 def gauntlet(request):
     return render(request, 'dungeons/gauntlet.html')
 
+def nums(request, id):
+    num = int(id)
+    return render(request, 'dungeons/nums.html', {'num':num})
+
 class FloorDetailView(DetailView):
     model = Level
     template_name = "dungeons/floor.html"

@@ -18,7 +18,7 @@
       height: 100%;
     }
   </style>
-  
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-17M7ZNQTD7"></script>
   <script>
@@ -34,17 +34,17 @@
 <body>
 <header id="header">
   <nav class="navbar navbar-expand-sm fixed-top">
-    <a href="./" class="navbar-brand" style="color: #99B3FF;">Welcome to Garth's World!</a>
+    <a href="{% url 'dnd_main' %}" class="navbar-brand" style="color: #99B3FF;">Welcome to Garth's World!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEx" aria-controls="navbarEx" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="color: #99B3FF; margin-right: 15px;">Menu</span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarEx">
       <ul class="nav">
         <li class="nav-item active">
-          <a class="nav-link" href="./map">Map!</a>
+          <a class="nav-link" href="{% url 'map' %}">Map!</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./gauntlet">The Gauntlet!</a>
+          <a class="nav-link" href="{% url 'gauntlet' %}">The Gauntlet!</a>
         </li>
       </ul>
     </div>

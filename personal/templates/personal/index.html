@@ -33,20 +33,20 @@
 <body class="body">
   <header id="header">
     <nav class="navbar navbar-expand-sm fixed-top" style="background:#2F4454;">
-      <a href="/" class="navbar-brand" style="color: #99B3FF;">Garth</a>
+      <a href="{% url 'home' %}" class="navbar-brand" style="color: #99B3FF;">Garth</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEx" aria-controls="navbarEx" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" style="color: #99B3FF; margin-right: 15px;">Menu</span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarEx">
         <ul class="nav">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/projects/">Projects</a>
+            <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
           </li>
         </ul>
       </div>
