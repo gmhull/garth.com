@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'personal',
     'projects',
     'dungeons',
+    'facial_recognition',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -110,6 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Redirect user to this page after a login/logout
+LOGIN_REDIRECT_URL = '/face/profile'
+LOGOUT_REDIRECT_URL = '/dungeons'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -125,8 +129,13 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+#///////////////////////////////////////////////////////////////////////////////
+'''
+Connections to a AWS bucket for static storage.  If the site is localhosted for
+testing purposes, the site will reference local files instead of the uploaded
+files.  AWS access variables are saved as environment variables.
+'''
+#///////////////////////////////////////////////////////////////////////////////
 
 # Grab the AWS S3 bucket info from environment variables
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')

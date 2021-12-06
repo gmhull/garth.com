@@ -1,0 +1,8 @@
+{% extends "facial_recognition/index.html" %}
+
+{% block content %}
+<section id="logged_out" class="container vertical-center d-flex flex-column justify-content-center" style="position: relative;">
+  <h1>Logged out!</h1>
+  <a href="{% url 'login'%}">Click here to login again.</a>
+</section>
+{% endblock %}

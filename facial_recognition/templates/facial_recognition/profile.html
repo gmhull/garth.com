@@ -1,0 +1,15 @@
+{% extends "facial_recognition/index.html" %}
+{% load static %}
+
+{% block content %}
+<section id="profile" class="container vertical-center d-flex flex-column justify-content-center" style="position: relative;">
+  <div class="row align-items-center">
+    <div class="col-6" style="">
+      <h2>Welcome {{ user }}</h2>
+    </div>
+    <div class="col-6" style="">
+      <img src="{{ user.image.url }}" alt="">
+    </div>
+  </div>
+</section>
+{% endblock %}

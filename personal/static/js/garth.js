@@ -15,3 +15,6 @@ $('.button-group').on( 'click', 'button', function(event) {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
 });
+
+
+// Make a login animation start while the facial recognition software is loading
