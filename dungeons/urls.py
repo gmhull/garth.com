@@ -8,8 +8,8 @@ urlpatterns = [
     path('', views.dnd_main, name='dnd_main'),
     path('map', views.map, name='map'),
     path('gauntlet', views.gauntlet, name='gauntlet'),
-    # path('floor_<slug:slug>', FloorDetailView.as_view(), name='floor_detail'),
     path('level_<int:level>', views.show_level, name='level'),
     path('end', views.end, name='gauntlet_end'),
     path('no_access', views.no_access, name='no access'),
+    path('enterance', views.enterance, name='enterance'),
 ]

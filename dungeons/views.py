@@ -21,6 +21,10 @@ def end(request):
     return render(request, 'dungeons/gauntlet_end.html')
 
 @login_required
+def enterance(request):
+    return render(request, 'dungeons/enterance.html')
+
+@login_required
 def show_level(request, level):
     MAX_LEVEL = 10
     current_user = request.user.profile

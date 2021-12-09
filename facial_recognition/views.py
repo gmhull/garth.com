@@ -12,9 +12,6 @@ def recognize(request):
     user = authenticate(request, username=face_match, password=password)
     if user is not None:
         login(request, user)
-        return redirect('/dungeons/level_1')
+        return redirect('/dungeons/enterance')
     else:
         return redirect('/dungeons/no_access')
-
-def profile(request):
-    return render(request, 'facial_recognition/profile.html')

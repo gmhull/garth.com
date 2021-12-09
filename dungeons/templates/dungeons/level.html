@@ -51,7 +51,7 @@
     <div class="container" style="color: white;">
       <div class="row">
         <div class="col-4">
-          <p class="butt-prev-{{ level.floor_number }}"><a href="{% url 'level' level.floor_number|add:-1 %}" style="color:white;">Previous Level</a></p>
+          <p class="butt-prev-{{ level.floor_number }}"><a href="{% url 'level' level.floor_number|add:-1 %}" style="color:white;">Level {{ level.floor_number|add:-1 }}</a></p>
         </div>
         <form method="post"> {% csrf_token %}
           <div class="col-4">
@@ -62,7 +62,7 @@
         </form>
         <div class="col-4">
           <!-- <p class="butt-next-{{ level.floor_number }}"><a href="./floor_{{ level.floor_number|add:1 }}" style="color:white;">Next Level</a></p> -->
-          <p class="butt-next-{{ level.floor_number }}"><a href="{% url 'level' level.floor_number|add:1 %}" style="color:white;">Next Level</a></p>
+          <p class="butt-next-{{ level.floor_number }}"><a href="{% url 'level' level.floor_number|add:1 %}" style="color:white;">Level {{ level.floor_number|add:1 }}</a></p>
         </div>
       </div>
     </div>
