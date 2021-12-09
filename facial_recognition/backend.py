@@ -54,12 +54,12 @@ class FaceRecognition(object):
             # Display the screenshots
             # cv2.imshow('screen', frame)
             # Break the loop if the escape key is pressed
-            k = cv2.waitKey(5) & 0xFF
-            if k == 27:
-                break
+            # k = cv2.waitKey(5) & 0xFF
+            # if k == 27:
+            #     break
         # Stop using the camera and close the image window
         cam.release()
-        cv2.destroyAllWindows()
+        # cv2.destroyAllWindows()
 
         return self.last_person[0], self.last_person[2]
 
