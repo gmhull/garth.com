@@ -8,6 +8,13 @@ class Level(models.Model):
     slug = models.SlugField(max_length=10, null=False, unique=True)
     map = models.ImageField(upload_to='dnd')
     color = models.CharField(max_length=10, default="black")
+    answer = models.CharField(max_length=50)
+    text = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.title    
+        return f'Level: {self.id}'
+
+    def password_check(self, answer):
+        if self.answer.lower() == answer.lower():
+            return True
+        return False

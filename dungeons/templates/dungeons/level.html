@@ -23,14 +23,14 @@
   </style>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17M7ZNQTD7"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-17M7ZNQTD7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-17M7ZNQTD7');
-  </script>
+  </script> -->
 
 </head>
 
@@ -50,11 +50,19 @@
   <footer style="height:6vh; background: black; text-align: center;">
     <div class="container" style="color: white;">
       <div class="row">
-        <div class="col-6">
-          <p class="butt-prev-{{ level.floor_number }}"><a href="./floor_{{ level.floor_number|add:-1 }}" style="color:white;">Previous Level</a></p>
+        <div class="col-4">
+          <p class="butt-prev-{{ level.floor_number }}"><a href="{% url 'level' level.floor_number|add:-1 %}" style="color:white;">Previous Level</a></p>
         </div>
-        <div class="col-6">
-          <p class="butt-next-{{ level.floor_number }}"><a href="./floor_{{ level.floor_number|add:1 }}" style="color:white;">Next Level</a></p>
+        <form method="post"> {% csrf_token %}
+          <div class="col-4">
+            <label>Enter Password</label>
+            <input type="text" name="answer" class="form-control"/>
+              <button type="submit" class="btn btn-primary form-control">Enter</button>
+          </div>
+        </form>
+        <div class="col-4">
+          <!-- <p class="butt-next-{{ level.floor_number }}"><a href="./floor_{{ level.floor_number|add:1 }}" style="color:white;">Next Level</a></p> -->
+          <p class="butt-next-{{ level.floor_number }}"><a href="{% url 'level' level.floor_number|add:1 %}" style="color:white;">Next Level</a></p>
         </div>
       </div>
     </div>
