@@ -132,6 +132,30 @@ class FaceRecognition(object):
         return face_encodings
 
 
+class FaceTest():
+
+    def run(self):
+        cam = cv2.VideoCapture(0)
+        k = 0
+
+        while True:
+            ret, frame = cam.read()
+
+            if ret:
+                k += 1
+
+                cv2.imshow('screen', frame)
+
+            if k > 10:
+                print("Break Camera")
+                break
+
+        cam.release()
+        cv2.destroyAllWindows()
+
+        return 'Bjorn', 'BjookieMonster'
+
+
 if __name__ == "__main__":
     f = FaceRecognition()
     # f.get_known_img_encodings()

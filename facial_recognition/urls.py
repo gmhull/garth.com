@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.face_recog, name='face_recog'),
-    path('recognize', views.recognize, name='recognize_face'),
+    # path('recognize', views.recognize, name='recognize_face'),
+    path('recognize', views.recog, name='recognize_face'),
 ]
