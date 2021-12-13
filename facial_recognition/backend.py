@@ -135,7 +135,8 @@ class FaceRecognition(object):
 class FaceTest():
 
     def run(self):
-        cam = cv2.VideoCapture(0)
+        print('Howdy')
+        cam = cv2.VideoCapture(-1)
         k = 0
 
         while True:
