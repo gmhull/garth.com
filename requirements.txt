@@ -13,12 +13,14 @@ colorama==0.4.4
 cssselect==1.1.0
 cssutils==2.3.0
 cycler==0.10.0
-datetime
+cymem==2.0.6
+demjson==2.2.4
 distlib==0.3.0
 dj-database-url==0.5.0
 Django==4.0
 django-heroku==0.3.1
 django-storages==1.11.1
+dlib==19.22.1
 face-recognition==1.3.0
 face-recognition-models==0.3.0
 filelock==3.0.12
@@ -44,6 +46,7 @@ Keras-Preprocessing==1.1.2
 keyring==23.2.1
 kiwisolver==1.3.1
 Markdown==3.2.2
+numpy==1.19.3
 oauthlib==3.1.0
 opencv-python-headless==4.5.4.60
 opt-einsum==3.3.0
