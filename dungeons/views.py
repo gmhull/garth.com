@@ -25,6 +25,7 @@ def gauntlet(request):
         image = File(image)
         print(image.name)
         name = str(image.name).split('\\')[-1]
+        name = str(image.name).split('/')[-1]
         name += '.jpg'  # store image in jpeg format
         image.name = name
         print(image.name)
