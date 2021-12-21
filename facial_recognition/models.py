@@ -24,3 +24,8 @@ class UserProfile(models.Model):
             self.save(update_fields=['completed'])
             return True
         return False
+
+class Screenshot(models.Model):
+    """Image class is used to get image from html to django backend."""
+    username = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='images')

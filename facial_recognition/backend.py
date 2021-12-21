@@ -1,113 +1,55 @@
 import face_recognition
-from PIL import Image
+from facial_recognition.models import Screenshot
+import PIL
 import cv2
 import numpy as np
-import re
+import urllib.request
 
 
-class FaceRecognition(object):
+class FaceRecognition():
     """Used to detect a user on the website and feed them user specific pages."""
-    VERIFICATION_TOTAL = 2
+    VERIFICATION_TOTAL = 1
+
+    def __init__(self, img_url):
+        self.img_url = img_url
 
     def compare_faces(self):
         # Grab the face encoding of the person that you want to compare to.
         known_image_encodings = self.get_known_img_encodings()
 
-        # Create a count variable to verify that the face is correct.
-        self.count = 0
-        self.last_person = None
+        # Grab the webcam screenshot that was taken
+        webcam_screenshot = self.img_url
 
-        # Initialize video capture
-        cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-        while True:
-            # ret == whether the video feed is returning any data
-            # frame == the feed itself
-            ret, frame = cam.read()
+        # Retrieve the image from the url and give it the name attached
+        urllib.request.urlretrieve(webcam_screenshot, 'screenshot.jpg')
+        # Open the image after the name has been changed
+        face_encodings = self.get_face_encoding('screenshot.jpg')
 
-            # If we are receiving a video feed, look at the image for a face and compare
-            # that face with the known encodings
-            if ret:
-                face_encodings = self.get_face_encoding(frame)
+        try:
+            # Calculate the face distance between the saved photo and the
+            # screenshot.  If no face is located in the screenshot, the
+            # exception will be thrown.
+            smallest_dist = 1
+            closest_match = None
+            for face in known_image_encodings:
+                face_distance = face_recognition.face_distance(face_encodings, face[1])[0]
+                if face_distance < smallest_dist:
+                    smallest_dist = face_distance
+                    closest_match = face
+        except:
+            # Share that no face was found and set face distance to a dummy val
+            face_distance = None
+            print("No face observed in image")
 
-                try:
-                    # Calculate the face distance between the saved photo and the
-                    # screenshot.  If no face is located in the screenshot, the
-                    # exception will be thrown.
-                    smallest_dist = 1
-                    closest_match = None
-                    for face in known_image_encodings:
-                        face_distance = face_recognition.face_distance(face_encodings, face[1])[0]
-                        if face_distance < smallest_dist:
-                            smallest_dist = face_distance
-                            closest_match = face
-                except:
-                    # Share that no face was found and set face distance to a dummy val
-                    face_distance = None
-                    print("No face observed in image")
-
-                # get the current count and break if the face is confirmed to
-                # match or not
-                self.check_face_distances(smallest_dist, closest_match)
-                if self.count == None:
-                    break
-
-            # Display the screenshots
-            # cv2.imshow('screen', frame)
-            # Break the loop if the escape key is pressed
-            # k = cv2.waitKey(5) & 0xFF
-            # if k == 27:
-            #     break
-        # Stop using the camera and close the image window
-        cam.release()
-        # cv2.destroyAllWindows()
-
-        return self.last_person[0], self.last_person[2]
-
-    def check_face_distances(self, face_distance, closest_match):
-        # Reset the counter if their is no face seen
-        # print(self.last_person[0], closest_match[0], self.count)
         if face_distance == None:
-            self.count = 0
-            print("No face here")
-        # Up the count variable for every sequential face match
-        elif face_distance <= 0.6 and closest_match == self.last_person:
-            if self.count < 0:
-                self.count = 0
-            self.count += 1
-        # If this is a new face, reset count to 0
-        elif face_distance <= 0.6:
-            self.count = 0
-        # Lower the count variable for every sequential face mismatch
-        elif face_distance > 0.6:
-            if self.count > 0:
-                self.count = 0
-            self.count -= 1
-
-        # After we have verified the faces are the same 5 times in a row, we
-        # are confident that the people are the same.
-        if self.count == self.VERIFICATION_TOTAL:
-            # print(f"This is {closest_match[0]}")
-            self.count = None
-        # After we have verified the faces are different 5 times in a row, we
-        # are confident that the people are not the same.
-        elif self.count == -self.VERIFICATION_TOTAL*2:
-            print("This person is not recognized")
-            self.count = None
-
-        self.last_person = closest_match
+            return None, None
+        elif smallest_dist <= 0.6:
+            return closest_match[0], closest_match[2]
+        else:
+            return None, None
 
     def get_known_img_encodings(self):
-        # # Load the image of the person we want to find similar people for
-        # known_image = face_recognition.load_image_file("Garth Face.png")
-        #
-        # # Encode the known image
-        # known_image_encoding = face_recognition.face_encodings(known_image)[0]
-
         # Copied the image encoding of a picture so that we dont need to run the process each time.
-        # face_encodings = string_from_user_model
-        # string_list = re.split('[\s,]+', face_encodings)
-        # face_encoding = [float(x) for x in string_list]
-
         known_image_encodings = [
                                 ['Bjorn',np.array([-9.64986458e-02,  1.12657592e-01,  2.17788871e-02, -6.21140003e-02, -1.05219923e-01, -1.02882981e-02, -3.74366157e-03, -3.05749029e-02,  1.35635316e-01, -7.37942830e-02,  2.08169758e-01, -6.64644316e-02, -3.16639125e-01,  8.08780361e-03, -1.34239569e-02,  1.03736065e-01, -1.62208483e-01, -1.75880000e-01, -6.50231540e-02, -1.24842808e-01, 5.92762157e-02,  2.28785276e-02, -4.72231545e-02,  8.48146975e-02, -9.49162245e-02, -2.90826946e-01, -8.38090554e-02, -1.55835561e-02, 2.81401947e-02, -1.88960537e-01,  1.11517057e-01,  9.46665779e-02, -1.68795809e-01,  1.93080474e-02,  4.56023477e-02,  1.36379033e-01, -1.30885512e-01, -4.72614355e-02,  2.42800146e-01, -1.23159084e-02, -1.15754418e-01,  2.98559219e-02, -7.81292561e-03,  3.25064927e-01,  1.35805145e-01, -9.71559901e-04, -2.76646502e-02, -5.77375516e-02,  9.55378935e-02, -2.37448722e-01,  4.22700606e-02,  2.76380867e-01,  1.11703485e-01,  8.88677016e-02,  5.32916896e-02, -1.48221165e-01, -3.52009125e-02,  2.03620985e-01, -1.81518987e-01,  9.79165137e-02,  4.06023413e-02, -1.80353791e-01, -4.12233025e-02, -1.40311718e-01,  1.31120443e-01,  9.09137130e-02, -1.44902498e-01, -2.05126241e-01,  2.10672930e-01, -1.24268889e-01, -9.40705463e-02,  1.44891188e-01, -1.19847670e-01, -1.74283370e-01, -2.00854555e-01,  5.20775318e-02, 3.74166280e-01,  7.90203363e-02, -1.52636811e-01, -9.50582884e-03, -2.45843865e-02, -2.99232546e-02,  5.54503640e-06,  5.70928007e-02, -8.09017271e-02, -1.12087876e-01, -1.24455154e-01,  9.77732986e-02, 1.61556095e-01,  5.14561590e-03, -1.09111689e-01,  1.24552011e-01, -1.05852447e-02,  7.00710118e-02,  2.64424980e-02,  2.65720766e-02, -7.94812664e-02, -1.01167057e-02, -1.54548258e-01, -1.49627328e-02, -4.85987030e-02, -1.25451282e-01, -7.83419907e-02,  9.57178175e-02, -3.92266437e-02,  2.00593114e-01,  3.73823866e-02,  2.36137398e-03, -1.20103545e-01,  5.55548482e-02, -1.60481781e-01,  4.78392579e-02, 1.84623227e-01, -3.36283416e-01,  2.87154794e-01,  1.63769260e-01, 3.24345306e-02,  9.96400341e-02,  5.34585752e-02,  6.37769774e-02, 8.40895157e-03, -1.00816466e-01, -2.00247690e-01, -1.03377171e-01, 1.53689049e-02,  4.24168147e-02,  3.22866775e-02,  5.63573558e-04,]),'BjookieMonster'],
                                 ['Khelloren',np.array([-0.17167667, 0.09206803, 0.10366771, -0.03049685, -0.13605699, -0.09322222, -0.07623162, -0.05420944, 0.16111821, -0.03014767, 0.20660177, 0.03072538, -0.16635494, -0.06959266, -0.04864787, 0.12348884, -0.17318347, -0.10311881, 0.02477111, -0.03887189, 0.01302095, 0.0328631, -0.01728431, 0.03905208, -0.118238, -0.29955739, -0.10751943, -0.08221173, 0.00753316, -0.1067176, -0.00898117, 0.10291661, -0.11013805, -0.05193019, 0.0024103, 0.12255407, -0.09182015, -0.00554042, 0.17753433, 0.00737534, -0.14188306, 0.00445754, -0.00225968, 0.31637409, 0.19065703, 0.05070755, -0.02123814, -0.09287698, 0.21801956, -0.25692412, 0.04923129, 0.17553732, 0.15505323, 0.04002956, 0.1150623, -0.07639506, 0.07877546, 0.11596275, -0.26457465, 0.02570585, 0.04419234, -0.07257415, -0.03149741, -0.11101718, 0.1489429, 0.15614599, -0.0916468, -0.07934156, 0.13528143, -0.15634854, -0.12632419, 0.07872392, -0.07407676, -0.20246017, -0.34951603, -0.02086291, 0.33152911, 0.19298542, -0.2044315, -0.00663473, 0.0209441, -0.02470889, 0.10663309, 0.04167065, -0.17188063, -0.02404843, -0.15042977, -0.02134479, 0.13628462, 0.02113348, -0.03792093, 0.15277724, 0.07562415, 0.13426332, 0.03925346, 0.04478924, -0.07024017, -0.02278443, -0.16648944, -0.015773, 0.03488861, -0.03130141, -0.02232888, 0.09411849, -0.11646559, 0.21228094, 0.04445402, 0.02529586, -0.08790694, -0.02964385, -0.10559306, 0.04402736, 0.13356735, -0.2252596, 0.18394807, 0.10650516, -0.04879867, 0.13986161, 0.06685949, 0.00532956, -0.14779092, -0.11174309, -0.12751879, -0.0771023, 0.07706293, -0.06287712, 0.09938022, 0.0337316]),'Velocipastor'],
@@ -119,45 +61,20 @@ class FaceRecognition(object):
 
         return known_image_encodings
 
-    def get_face_encoding(self, frame):
-        # variable name for the screenshot taken from the video feed
-        img_file_name = "screenshot.png"
-        # write the screenshot to an image
-        cv2.imwrite(img_file_name, frame)
+    def get_face_encoding(self, img_source):
         # Load the screenshot image
-        img = face_recognition.load_image_file(img_file_name)
+        img = face_recognition.load_image_file(img_source)
         # Search the screenshot for faces and generate their face encoding
         face_encodings = face_recognition.face_encodings(img)
 
         return face_encodings
 
 
-class FaceTest():
-
-    def run(self):
-        print('Howdy')
-        cam = cv2.VideoCapture(-1)
-        k = 0
-
-        while True:
-            ret, frame = cam.read()
-
-            if ret:
-                k += 1
-
-                cv2.imshow('screen', frame)
-
-            if k > 10:
-                print("Break Camera")
-                break
-
-        cam.release()
-        cv2.destroyAllWindows()
-
-        return 'Bjorn', 'BjookieMonster'
-
-
 if __name__ == "__main__":
-    f = FaceRecognition()
-    # f.get_known_img_encodings()
-    f.compare_faces()
+    # f = FaceRecognition()
+    # # f.get_known_img_encodings()
+    # f.compare_faces()
+
+    screenshot_url = urllib.request.urlretrieve('https://garthdotcom-bucket.s3.amazonaws.com/media/images/fi6orxyv.jpg', 'ggg.jpg')
+
+    face_encodings = PIL.Image.open('ggg.jpg')

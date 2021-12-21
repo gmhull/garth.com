@@ -10,6 +10,6 @@ urlpatterns = [
     path('gauntlet', views.gauntlet, name='gauntlet'),
     path('level_<int:level>', views.show_level, name='level'),
     path('end', views.end, name='gauntlet_end'),
-    path('no_access', views.no_access, name='no access'),
+    path('no_access', views.no_access, name='no_access'),
     path('enterance', views.enterance, name='enterance'),
 ]

@@ -25,17 +25,29 @@ The Gauntlet
         <p>You may exit the gauntlet at any point.</p>
       </div>
       <div class="carousel-item">
-        <p><a href="{% url 'recognize_face' %}" style="color:white;">Enter</a></p>
+        <form method="post"> {% csrf_token %}
+          <div class="row justify-content-center">
+            <button id="face_button" type="button">Enter</button>
+            <button id="" type="submit">Enter</button>
+          </div>
+          <div class="row" style="visibility: hidden;">
+            <video id="video">Video stream not available.</video>
+            <img id="photo" alt="your image">
+            <input id="img_input" value="" name="img_src" type="text" style="display: none;">
+            <canvas id="canvas"></canvas>
+          </div>
+          <script src="{% static 'js/face_recog.js' %}"></script>
+        </form>
       </div>
     </div>
-    <!-- <a class="carousel-control-prev" href="#gauntletCarouselControls" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#gauntletCarouselControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#gauntletCarouselControls" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-    </a> -->
+    </a>
   </div>
 </div>
 {% endblock %}
