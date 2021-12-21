@@ -29,11 +29,10 @@ def gauntlet(request):
         if image is not None:
             img_datetime = datetime.now()
             img_datetime = img_datetime.strftime("%d/%m/%Y %H:%M:%S")
-            obj = Screenshot.objects.create(username=img_datetime, image=image)  # create a object of Image type defined in your model
+            print('Problem is on the below line')
+            obj = Screenshot(username=img_datetime, image=image)  # create a object of Image type defined in your model
             obj.save()
-            print(obj.image.url)
             request.session["img_id"] = obj.username  #url to image stored in my server/local device
-            print(obj.username)
         else:
             return redirect('/')
         return redirect('recognize')
