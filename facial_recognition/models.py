@@ -28,4 +28,4 @@ class UserProfile(models.Model):
 class Screenshot(models.Model):
     """Image class is used to get image from html to django backend."""
     username = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='facial_recognition/images')
