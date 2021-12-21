@@ -23,9 +23,11 @@ def gauntlet(request):
         image.write(urlopen(image_path).read())
         image.flush()
         image = File(image)
+        print(image.name)
         name = str(image.name).split('\\')[-1]
         name += '.jpg'  # store image in jpeg format
         image.name = name
+        print(image.name)
         if image is not None:
             img_datetime = datetime.now()
             img_datetime = img_datetime.strftime("%d/%m/%Y %H:%M:%S")
