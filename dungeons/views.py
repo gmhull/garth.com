@@ -1,7 +1,7 @@
 from django.views.generic import DetailView
 from dungeons.models import Level
 from facial_recognition.models import Screenshot
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
 from django.core.files.base import ContentFile
@@ -23,16 +23,13 @@ def gauntlet(request):
         image.write(urlopen(image_path).read())
         image.flush()
         image = File(image)
-        print(image.name)
         name = str(image.name).split('\\')[-1]
         name = str(image.name).split('/')[-1]
         name += '.jpg'  # store image in jpeg format
         image.name = name
-        print(image.name)
         if image is not None:
             img_datetime = datetime.now()
             img_datetime = img_datetime.strftime("%d/%m/%Y %H:%M:%S")
-            print('Problem is on the below line')
             obj = Screenshot(username=img_datetime, image=image)  # create a object of Image type defined in your model
             obj.save()
             request.session["img_id"] = obj.username  #url to image stored in my server/local device
@@ -65,23 +62,16 @@ def show_level(request, level):
     if request.method == 'GET':
         if current_level >= int(level) and int(level) > 0:
             return render(request, 'dungeons/level.html', {'level': level_obj})
-        # elif current_level > int(level) and int(level) > 0:
-        #     return HttpResponseRedirect(f'level_{int(level)}')
         else:
             return redirect('level', int=current_level)
-            # return HttpResponseRedirect(f'level_{current_level}')
 
     elif request.method == 'POST':
         user_answer = request.POST['answer']
-        print(user_answer)
         if level_obj.password_check(user_answer):
             if current_user.delve_down():
                 return redirect('gauntlet_end')
             return redirect('level', int=level+1)
-            # return HttpResponseRedirect(f'level_{int(level)+1}')
         return redirect('level', int=level)
-        # return HttpResponseRedirect(f'level_{int(level)}')
-
 class FloorDetailView(DetailView):
     model = Level
     template_name = "dungeons/floor.html"
