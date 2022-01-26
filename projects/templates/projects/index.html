@@ -1,34 +1,36 @@
-{% extends "personal/index.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Garth Hull McSweeney">
+    <title>{% block title %}Garth Hull McSweeney{% endblock %}</title>
 
-{% block title %}
-Garth's Projects
-{% endblock %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/garth.css' %}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="{% static 'css/aos.css' %}" rel='stylesheet'>
 
-{% block content %}
+    <link href="https://fonts.googleapis.com/css?family=Dongle&family=Verdana&Mochiy+Pop+P+One&display=swap|" rel="stylesheet">
+  </head>
 
-  <div class="container intro">
-    <h1>Projects:</h1>
-    <p>
-      This is a sample of some of the projects that I have worked on.  Some of
-      these were for school and work, others were done in my free time.
-    </p>
-  </div>
+  <body class="body">
 
-  {% for project in object_list %}
-    <!-- <div class="container"> -->
-      <div class="row">
-        <div class="col-lg-4 col-md-6 projects-item">
-          <img src="{{ project.cover_image.url }}" alt="" class="img-fluid">
-        </div>
-        <div class="col-lg-8 col-md-6 projects-item">
-          <div class="projects-info">
-            <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
-            <p>{{ project.body|safe|truncatewords:40 }}</p>
-            <p>{{ project.type }}, <i>{{ project.date|date:"m-d-Y" }}</i></p>
-          </div>
-        </div>
-      </div>
-    <!-- </div> -->
-  {% endfor %}
+    {% block content %}
+    {% endblock %}
 
-{% endblock %}
+    <footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/typed.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/garth.js' %}"></script>
+
+
+  </body>
+</html>

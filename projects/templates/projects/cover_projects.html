@@ -1,13 +1,13 @@
-{% extends "personal/cover_page.html" %}
+{% extends "projects/navbar.html" %}
 
 {% block title %}
 Garth Hull McSweeney
 {% endblock %}
 
-{% block content %}
+{% block projects %}
 
   {% for project in object_list %}
-    <div class="card rounded projects-item shadow-sm filter-{{ project.type }}">
+    <div class="col-lg-4 col-md-6 project-item filter-{{ project.type }}">
       <img src="{{ project.cover_image.url }}" class="img-fluid">
       <div class="projects-info">
         <h4><a href="/projects/{{project.slug}}" style="color:#DA7B93;"> {{project.title}} </a></h4>
@@ -15,6 +15,18 @@ Garth Hull McSweeney
         <p>Updated on {{ project.date|date:"m-d-Y" }}</p>
       </div>
     </div>
+
+    <!-- <div class="col-lg-4 col-md-6 project-item filter-{{ project.type }}">
+      <div class="project-wrap">
+        <img src="{{ project.cover_image.url }}" class="img-fluid">
+        <div class="project-info">
+          <h4><a href="/projects/{{project.slug}}" style="color:#DA7B93;"> {{project.title}} </a></h4>
+          <p>{{ project.body|safe|truncatewords:10 }}</p>
+          <p>Updated on {{ project.date|date:"m-d-Y" }}</p>
+
+        </div>
+      </div>
+    </div> -->
   {% endfor %}
 
 {% endblock %}
