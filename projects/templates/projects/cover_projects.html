@@ -8,11 +8,13 @@ Garth Hull McSweeney
 
   {% for project in object_list %}
     <div class="col-lg-4 col-md-6 project-item filter-{{ project.type }}">
-      <img src="{{ project.cover_image.url }}" class="img-fluid">
-      <div class="projects-info">
-        <h4><a href="/projects/{{project.slug}}" style="color:#DA7B93;"> {{project.title}} </a></h4>
-        <p>{{ project.body|safe|truncatewords:10 }}</p>
-        <p>Updated on {{ project.date|date:"m-d-Y" }}</p>
+      <div class="card">
+        <div class="project-info">
+          <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
+          <p>{{ project.body|safe|truncatewords:10 }}</p>
+          <p>Updated on {{ project.date|date:"m-d-Y" }}</p>
+        </div>
+        <img src="{{ project.cover_image.url }}" class="img-fluid">
       </div>
     </div>
 
