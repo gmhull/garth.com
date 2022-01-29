@@ -4,10 +4,10 @@ from .models import Project
 
 # Create your views here.
 def about(request):
-    return render(request, 'portfolio/about.html')
+    return render(request, 'projects/about.html')
 
 def projects(request):
-    return render(request, 'portfolio/projects.html')
+    return render(request, 'projects/projects.html')
 
 class ProjectListView(ListView):
     model = Project
@@ -15,4 +15,4 @@ class ProjectListView(ListView):
 
 class ProjectDetailView(DetailView):
     model = Project
-    template_name = "portfolio/project_detail.html"
+    template_name = "projects/project_detail.html"

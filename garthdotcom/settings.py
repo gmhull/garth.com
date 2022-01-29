@@ -34,7 +34,7 @@ CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     # 'personal',
-    'portfolio',
+    'projects',
     'dungeons',
     'facial_recognition',
     'django.contrib.admin',
@@ -151,7 +151,7 @@ AWS_DEFAULT_ACL = 'public-read'
 
 # Point the site to the location of static files when collecting
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'portfolio/static'),
+    os.path.join(BASE_DIR, 'projects/static'),
 ]
 # Provide a url for media files
 MEDIA_URL = 'https://%s/media/' % (AWS_S3_CUSTOM_DOMAIN)

@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')),
+    path('', include('projects.urls')),
     # path('projects/', include('projects.urls')),
     path('dungeons/', include('dungeons.urls')),
     path('face/', include('facial_recognition.urls')),

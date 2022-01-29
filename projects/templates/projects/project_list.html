@@ -1,4 +1,4 @@
-{% extends "portfolio/top_navbar.html" %}
+{% extends "projects/top_navbar.html" %}
 
 {% block title %}
 Garth Hull McSweeney
@@ -27,7 +27,7 @@ Garth Hull McSweeney
             </div>
             <div class="project-info">
               <p>{{ project.body|safe|truncatewords:50 }}</p>
-              <p><i>{{ project.type }}, {{ project.date|date:"mmm-Y" }}</i></p>
+              <p><i>{{ project.type }}, {{ project.date|date:"m-Y" }}</i></p>
             </div>
           </div>
         </div>
