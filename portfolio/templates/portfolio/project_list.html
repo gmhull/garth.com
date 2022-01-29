@@ -1,0 +1,40 @@
+{% extends "portfolio/top_navbar.html" %}
+
+{% block title %}
+Garth Hull McSweeney
+{% endblock %}
+
+{% block content %}
+
+<section id="project-list">
+  <div class="section-header">
+    <h2>My Projects:</h2>
+    <p>Here is a list of some projects that I have worked on.</p>
+  </div>
+  <div class="container">
+    {% for project in object_list %}
+
+      <div class="container project-block">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="project-img">
+              <img src="{{ project.cover_img.url }}" alt="">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="project-title">
+              <h3>{{ project.title }}</h3>
+            </div>
+            <div class="project-info">
+              <p>{{ project.body|safe|truncatewords:50 }}</p>
+              <p><i>{{ project.type }}, {{ project.date|date:"mmm-Y" }}</i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

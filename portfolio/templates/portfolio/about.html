@@ -1,0 +1,272 @@
+{% extends "portfolio/top_navbar.html" %}
+{% load static %}
+
+{% block title %}
+About Garth
+{% endblock %}
+
+
+{% block content %}
+<div id="about-page">
+
+  <section id="about_me">
+    <div class="section-header">
+      <h2>Who am I?</h2>
+      <p></p>
+    </div>
+    <div class="container display-container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <p>
+            I started building things early and haven't wanted to stop since. It
+            started with woodworking projects and some electronics. Then in high
+            school I was introduced to CAD software and 3D printing. A few years
+            later I saved up money to buy my first printer and started designing
+            and printing out different projects.
+          </p>
+          <p>
+            Since then I have earned my bachelors and masters degrees as a
+            Mechanical Engineer from WPI. As a process engineer at MilliporeSigma
+            I use my skills to problem solve issues and improve the manufacturing
+            lines.
+          </p>
+          <p>
+            I still enjoy working on projects in my personal time. I have a lot
+            of 3D printing projects but have also started to branch out in other
+            areas. After school I got interested in programming. This has gotten
+            me involved with deep learning, full stack web design, and robotics.
+            You can check out some of these <a href="/projects">projects</a> on
+            this website. I also enjoy hiking, backpacking, soccer, climbing,
+            and pick-up games. I cant wait to see where I go next!
+          </p>
+        </div>
+        <div class="col-md-4 ">
+          <img src="{% static 'img/Garth at Yellowstone.jpg' %}" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <h2>Experience</h2>
+        <p></p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <h2 class="experience-title">Professional</h2>
+          <div class="experience-item">
+            <h4>Process Engineer</h4>
+            <h5>September 2020 - Present</h5>
+            <p><i>MilliporeSigma - Jaffrey, NH</i></p>
+            <!-- <p>
+              PE for the Pellicon 3 line of filters.
+            </p> -->
+            <ul>
+              <li>Implemented PLC code updates to run product cycles in parallel and increase throughput by 15%.</li>
+              <li>Reduced downtime by troubleshooting and resolving issues.  Analyzed data from tested devices or experiments to identify and fix machine malfunctions or adjust machine settings.</li>
+              <li>Optimized injection molding settings to increase product yields up to 40%.  Led design of experiments to modify manufacturing equipment settings to improve device yields.</li>
+              <li>Created CAD designs/drawings to develop machine improvements.  Designed component to resolve issues of new die punch not working as intended.  Worked with manufacturing to build the final design.</li>
+              <li>Develop a new Manufacturing Execution System (MES) to digitize the manufacturing process.</li>
+              <li>Communicate with other departments to meet quality and production needs.</li>
+              <li>Scheduled repairs and discussed improvements of equipment with 3rd party manufacturers.</li>
+            </ul>
+          </div>
+          <div class="experience-item">
+            <h4>Engineering Intern</h4>
+            <h5>May - August, 2018</h5>
+            <p><i>Boston Dynamics - Waltham, MA</i></p>
+            <ul>
+              <li>Developed machine learning image classification datasets used to locate warehouse boxes in 3D space.</li>
+              <li>Improved robotic image recognition for shipping container applications.</li>
+            </ul>
+          </div>
+          <div class="experience-item">
+            <h4>Loan Servicing Intern</h4>
+            <h5>May - August, (2015-2017, 2019)</h5>
+            <p><i>Leader Bank - Arlington, MA</i></p>
+            <!-- <ul>
+              <li>Worked in the loan servicing department to organize file systems and
+                communicate with third party insurance companies.</li>
+              </ul> -->
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h2 class="experience-title">Education</h2>
+          <div class="experience-item">
+            <h4>Bachelors of Science in Mechanical Engineering</h4>
+            <h5>August 2016 - May 2020</h5>
+            <p><i>Worcester Polytechnic Institute - Worcester, MA</i></p>
+            <!-- <p>
+              GPA: 3.82
+            </p> -->
+          </div>
+          <div class="experience-item">
+            <h4>Masters of Science in Mechanical Engineering</h4>
+            <h5>August 2019 - May 2020</h5>
+            <p><i>Worcester Polytechnic Institute - Worcester, MA</i></p>
+            <!-- <p>
+              GPA: 3.92
+            </p> -->
+          </div>
+          <h2 class="experience-title">Certifications</h2>
+          <div class="experience-item">
+            <h4>Solidworks Expert Certification</h4>
+            <h5>October 2021</h5>
+            <p><i>Dassault Systemes</i></p>
+            <!-- <p>
+              GPA: 3.82
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="padding-bottom:20px;">Skills</h2>
+        <p></p>
+      </div>
+
+      <div class="row">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Solidworks</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                I have been working with Solidworks for the past 10 years on various
+                school and personal projects.  I earned my expert certification
+                in mechanical design from Dassault Systemes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">3D Printing</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                I have always been excited about creating and realizing different ideas.
+                3D printing has been a great way to rapidly prototype ideas.  I
+                use a Prusa MK2S printer with MMU for projects.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Inventor Fusion</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                In addition to Solidworks, I have experience with other modeling
+                software such as Inventor. I also have experience with Autocad,
+                Maya, and ZBrush.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Python</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                I started programming in high school and have picked it up again after
+                college.  I use python to explore topics in Machine Learning,
+                web development, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Arduino</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                Along with coding, I have been developing an interest in robotics and
+                electronics.  My main project has been a quadcopter run using an
+                Arduino Uno and a 3D printed body.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Web Design</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                I like to try new things, building websites is one of them.  Garths.world is
+                the second site that I have made.  The first one I made in Albania as
+                a part of a historical conservation project.  Check it out at Xhubleta.org
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Communications</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                WPI and MilliporeSigma have greatly helped me improve my communicational ability.
+                When working on projects with strict deadlines and quick decisions needing to
+                be made, strong sommunication has been vital.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Woodworking</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                In additon to printing, I also enjoy woodworking. I am still learning,
+                but I enjoy the process and the beautiful creations.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="card-title">Woodworking</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="card-description">
+                In additon to printing, I also enjoy woodworking. I am still learning,
+                but I enjoy the process and the beautiful creations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

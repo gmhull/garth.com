@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('personal.urls')),
-    path('projects/', include('projects.urls')),
+    path('', include('portfolio.urls')),
+    # path('projects/', include('projects.urls')),
     path('dungeons/', include('dungeons.urls')),
     path('face/', include('facial_recognition.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
