@@ -13,26 +13,26 @@ Garth Hull McSweeney
   </div>
   <div class="container">
     {% for project in object_list %}
-
-      <div class="container project-block">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="project-img">
-              <img src="{{ project.cover_img.url }}" alt="">
+      <a href="{% url 'project_detail' project.slug %}">
+        <div class="container project-block">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="project-img">
+                <img src="{{ project.cover_image.url }}" class="img-fluid" alt="">
+              </div>
             </div>
-          </div>
-          <div class="col-md-8">
-            <div class="project-title">
-              <h3>{{ project.title }}</h3>
-            </div>
-            <div class="project-info">
-              <p>{{ project.body|safe|truncatewords:50 }}</p>
-              <p><i>{{ project.type }}, {{ project.date|date:"m-Y" }}</i></p>
+            <div class="col-md-8">
+              <div class="project-title">
+                <h3>{{ project.title }}</h3>
+              </div>
+              <div class="project-info">
+                <p>{{ project.body|safe|truncatewords:45 }}</p>
+                <p><i>{{ project.type }}, {{ project.date|date:"m-Y" }}</i></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+      </a>
     {% endfor %}
   </div>
 </section>
