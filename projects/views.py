@@ -16,3 +16,8 @@ class ProjectListView(ListView):
 class ProjectDetailView(DetailView):
     model = Project
     template_name = "projects/project_detail.html"
+
+    # def __init__(self, *args, **kwargs):
+    #     super(DetailView, self).__init__(*args, **kwargs)
+    #
+    #     print(self.model.type)

@@ -27,7 +27,7 @@ Garth Hull McSweeney
               </div>
               <div class="project-info">
                 <p>{{ project.body|safe|truncatewords:45 }}</p>
-                <p><i>{{ project.type }}, {{ project.date|date:"m-Y" }}</i></p>
+                <p>{{ project.type }}, <i>{{ project.date|date:"M, Y" }}</i></p>
               </div>
             </div>
           </div>
