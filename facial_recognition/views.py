@@ -18,4 +18,4 @@ def recognize(request):
         login(request, user)
         return redirect('enterance')
     else:
-        return redirect('no_access')
+        return redirect('not_found')

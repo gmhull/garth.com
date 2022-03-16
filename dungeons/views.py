@@ -38,6 +38,9 @@ def gauntlet(request):
         return redirect('recognize')
     return render(request, 'dungeons/gauntlet.html')
 
+def not_found(request):
+    return render(request, 'dungeons/not_found.html')
+
 def no_access(request):
     return render(request, 'dungeons/no_access.html')
 

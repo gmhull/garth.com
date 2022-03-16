@@ -1,0 +1,27 @@
+{% extends "dungeons/index.html" %}
+{% load static %}
+
+{% block title %}
+Select Your Hero
+{% endblock %}
+
+{% block content %}
+<div class="container vertical-center d-flex flex-column justify-content-center">
+  <div class="row">
+    <div class="col-6 character-icon">
+      <img src="{% static 'img/dnd/Khell.png' %}" alt="Khell">
+    </div>
+    <div class="col-6 character-icon">
+      <img src="{% static 'img/dnd/Sol.png' %}" alt="Sol">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 character-icon">
+      <img src="{% static 'img/dnd/Roan.png' %}" alt="Roan">
+    </div>
+    <div class="col-6 character-icon">
+      <img src="{% static 'img/dnd/Hedyn.png' %}" alt="Hedyn">
+    </div>
+  </div>
+</div>
+{% endblock %}
