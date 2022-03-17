@@ -27,8 +27,12 @@ The Gauntlet
       <div class="carousel-item">
         <form method="post"> {% csrf_token %}
           <div class="row justify-content-center">
-            <button id="face_button" type="button">Enter</button>
-            <button id="" type="submit">Enter</button>
+            <!-- <div class="cam-button"> -->
+              <button id="face_button" type="button">I'm Ready</button>
+            <!-- </div> -->
+            <!-- <div class="recog-button hidden"> -->
+              <button id="recog_button" type="submit" style="display:none;">Enter</button>
+            <!-- </div> -->
           </div>
           <div class="row" style="visibility: hidden;">
             <video id="video">Video stream not available.</video>

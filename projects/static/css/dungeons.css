@@ -103,3 +103,15 @@
 .butt-prev-1, .butt-next-9 {
   visibility: hidden;
 }
+
+.enterance-text {
+  text-align: center;
+}
+
+.character-icon:hover {
+  background-color: #FFF;
+}
+
+.hidden {
+  visibility: hidden;
+}

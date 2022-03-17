@@ -8,7 +8,7 @@
   <title>Enter the Gauntlet...</title>
 
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'css/garths.css' %}" rel="stylesheet">
+  <link href="{% static 'css/dungeons.css' %}" rel="stylesheet">
 
   <style media="screen">
     #main {
@@ -25,19 +25,25 @@
 
 <body>
   <section id="main" style="">
-
     <div class="container vertical-center d-flex flex-column justify-content-center">
-      <div class="row">
-        <div class="col-12">
-          <h1 style="color:black;">Welcome {{ user }}.</h1>
+      <div class="enterance-text">
+        <div class="row">
+          <div class="col-12">
+            <img src="{% static 'img/dnd/'|add:user.username|add:'.png' %}" alt="{{user}}">
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12" style="text-align: center;">
-          <h2>
-            At each level of the gauntlet there is a password.
-            Submit the password to progress to the next level.
-          </h2>
+        <div class="row">
+          <div class="col-12">
+            <h1 style="color:black;">Welcome {{ user }}.</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h2>
+              At each level of the gauntlet there is a password.
+              Submit the password to progress to the next level.
+            </h2>
+          </div>
         </div>
       </div>
     </div>

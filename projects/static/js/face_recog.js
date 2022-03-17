@@ -18,6 +18,7 @@
   var canvas = null;
   var photo = null;
   var face_button = null;
+  var recog_button = null;
   var input = null;
 
   function startup() {
@@ -25,6 +26,7 @@
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
     face_button = document.getElementById('face_button');
+    recog_button = document.getElementById('recog_button');
     input = document.getElementById('img_input');
 
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -91,6 +93,9 @@
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
       input.setAttribute('value', data);
+
+      face_button.setAttribute('style', 'display:none;');
+      recog_button.setAttribute('style', 'display:block');
     } else {
       clearphoto();
     }
