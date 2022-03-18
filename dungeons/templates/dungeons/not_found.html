@@ -5,23 +5,36 @@
 Select Your Hero
 {% endblock %}
 
-{% block content %}
-<div class="container vertical-center d-flex flex-column justify-content-center">
+{% block main %}
+<div id="character-selection" class="container vertical-center d-flex flex-column justify-content-center">
   <div class="row">
-    <div class="col-6 character-icon">
-      <img src="{% static 'img/dnd/Khell.png' %}" alt="Khell">
-    </div>
-    <div class="col-6 character-icon">
-      <img src="{% static 'img/dnd/Sol.png' %}" alt="Sol">
-    </div>
+    <h2>Select your character.</h2>
   </div>
-  <div class="row">
-    <div class="col-6 character-icon">
-      <img src="{% static 'img/dnd/Roan.png' %}" alt="Roan">
+  <form method="post"> {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        <button type="submit" name="character-button" value="Khell">
+          <img src="{% static 'img/dnd/Khell.png' %}" alt="Khell" class="character-icon">
+        </button>
+      </div>
+      <div class="col-6">
+        <button type="submit" name="character-button" value="Sol">
+          <img src="{% static 'img/dnd/Sol.png' %}" alt="Sol" class="character-icon">
+        </button>
+      </div>
     </div>
-    <div class="col-6 character-icon">
-      <img src="{% static 'img/dnd/Hedyn.png' %}" alt="Hedyn">
+    <div class="row">
+      <div class="col-6">
+        <button type="submit" name="character-button" value="Roan">
+          <img src="{% static 'img/dnd/Roan.png' %}" alt="Roan" class="character-icon">
+        </button>
+      </div>
+      <div class="col-6">
+        <button type="submit" name="character-button" value="Hedyn">
+          <img src="{% static 'img/dnd/Hedyn.png' %}" alt="Hedyn" class="character-icon">
+        </button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
 {% endblock %}

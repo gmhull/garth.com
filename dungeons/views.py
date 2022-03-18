@@ -3,11 +3,13 @@ from dungeons.models import Level
 from facial_recognition.models import Screenshot
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.core.files.temp import NamedTemporaryFile
 from urllib.request import urlopen
 from datetime import datetime
+from .backend import get_known_img_encodings
 
 # Create your views here.
 def dnd_main(request):
@@ -39,6 +41,15 @@ def gauntlet(request):
     return render(request, 'dungeons/gauntlet.html')
 
 def not_found(request):
+    if request.method == "POST":
+        user = request.POST['character-button']
+        list = get_known_img_encodings()
+        for x in list:
+            if x[0] == user:
+                code = x[-1]
+        user = authenticate(request, username=user, password=code)
+        login(request, user)
+        return redirect('enterance')
     return render(request, 'dungeons/not_found.html')
 
 def no_access(request):

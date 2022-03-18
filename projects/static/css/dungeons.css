@@ -108,10 +108,16 @@
   text-align: center;
 }
 
-.character-icon:hover {
-  background-color: #FFF;
+.character-icon {
+  height: 40vh;
+  margin-bottom: 20px;
 }
 
-.hidden {
-  visibility: hidden;
+.character-icon:hover {
+  transform: scale(1.1);
+}
+
+#character-selection button {
+  border-width: 0px;
+  background-color: inherit;
 }

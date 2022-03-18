@@ -1,8 +1,16 @@
-{% extends "dungeons/index.html" %}
+{% extends "dungeons/navbar.html" %}
 {% load static %}
 
 {% block title %}
 Park Map
+{% endblock %}
+
+{% block style %}
+  body {
+    background-color: #000000;
+    color: #FFF;
+    height: 100%;
+  }
 {% endblock %}
 
 {% block content %}
