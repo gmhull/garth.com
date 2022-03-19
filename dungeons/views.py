@@ -48,8 +48,10 @@ def not_found(request):
             if x[0] == user:
                 code = x[-1]
         user = authenticate(request, username=user, password=code)
-        login(request, user)
-        return redirect('enterance')
+        if user:
+            login(request, user)
+            print(user)
+            return redirect('enterance')
     return render(request, 'dungeons/not_found.html')
 
 def no_access(request):
@@ -77,15 +79,15 @@ def show_level(request, level):
         if current_level >= int(level) and int(level) > 0:
             return render(request, 'dungeons/level.html', {'level': level_obj})
         else:
-            return redirect('level', int=current_level)
+            return redirect('level', current_level)
 
     elif request.method == 'POST':
         user_answer = request.POST['answer']
         if level_obj.password_check(user_answer):
             if current_user.delve_down():
                 return redirect('gauntlet_end')
-            return redirect('level', int=level+1)
-        return redirect('level', int=level)
+            return redirect('level', level+1)
+        return redirect('level', level)
 class FloorDetailView(DetailView):
     model = Level
     template_name = "dungeons/floor.html"
