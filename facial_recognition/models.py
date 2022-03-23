@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 # Create your models here.
 class UserProfile(models.Model):
@@ -25,7 +26,13 @@ class UserProfile(models.Model):
             return True
         return False
 
+
 class Screenshot(models.Model):
     """Image class is used to get image from html to django backend."""
     username = models.CharField(max_length=20)
     image = models.ImageField(upload_to='facial_recognition/images')
+
+
+@receiver(post_delete, sender=Screenshot)
+def delete_s3_bucket_file(sender, instance, using, **kwargs):
+    instance.image.delete(save=False)
