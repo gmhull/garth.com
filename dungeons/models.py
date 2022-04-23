@@ -7,9 +7,7 @@ class Level(models.Model):
     floor_number = models.CharField(max_length=2)
     slug = models.SlugField(max_length=10, null=False, unique=True)
     map = models.ImageField(upload_to='dnd')
-    color = models.CharField(max_length=10, default="black")
     answer = models.CharField(max_length=50)
-    text = models.CharField(max_length=200)
 
     def __str__(self):
         return f'Level: {self.id}'

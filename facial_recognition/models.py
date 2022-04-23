@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     dungeon_depth = models.IntegerField(default=1)
     completed = models.BooleanField(default=False)
 
-    MAX_LEVEL = 9
+    MAX_LEVEL = 10
 
     def __str__(self):
         return f'{self.user.username} is on level {self.dungeon_depth}'

@@ -71,7 +71,7 @@ def show_level(request, level):
     current_user = request.user.profile
     current_level = current_user.dungeon_depth
     if current_level == MAX_LEVEL and current_user.completed:
-        return redirect('end')
+        return redirect('gauntlet_end')
 
     level_obj = get_object_or_404(Level, floor_number=int(level))
 
