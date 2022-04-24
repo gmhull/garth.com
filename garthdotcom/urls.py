@@ -20,9 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('projects.urls')),
-    # path('projects/', include('projects.urls')),
-    path('dungeons/', include('dungeons.urls')),
+    path('12345/', include('projects.urls')),   # Change to '' once the session is done
+    path('', include('dungeons.urls')),         # Change to 'dungeons/ after the session is done'
     path('face/', include('facial_recognition.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
