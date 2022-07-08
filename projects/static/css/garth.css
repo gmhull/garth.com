@@ -80,6 +80,7 @@ a:hover {
   background-color: var(--skobeloff);
   color: var(--light-cyan);
   border-radius: 30px;
+  border: 2px solid var(--outer-space);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -874,13 +875,21 @@ Project Detail Page
   }
 }
 
-#project_carousel .text-body {
+#project_carousel .text-container {
+  background-color: var(--skobeloff);
+  color: var(--light-cyan);
+  border: 2px solid var(--outer-space);
+  border-radius: 30px;
+  margin-top: 40px;
+}
+
+#project_carousel .project-text-body {
   height: 100%;
-  padding-top: 100px;
+  color: var(--light-cyan);
 }
 
 @media (max-width: 782px) {
-  #project_carousel .text-body {
+  #project_carousel .project-text-body {
     padding-top: 20px;
   }
 }
@@ -900,7 +909,7 @@ Project Detail Page
   font-style: oblique;
 }
 
-#project_carousel .text-body p {
+#project_carousel .project-text-body p {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
@@ -930,7 +939,7 @@ Project Detail Page
 #project_carousel .img-wrapper img {
   width: 100%;
   height: auto;
-  object-position: center center;
+  object-position: bottom center;
 }
 
 #project_carousel .carousel-img {

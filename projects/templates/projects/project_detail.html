@@ -16,7 +16,7 @@
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-5 order-1">
-                  <div class=" text-wrapper">
+                  <div class="text-wrapper">
                     <div class="row">
                       <div class="project-tag">
                         <h5>{{ project.type }}</h5>
@@ -28,9 +28,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -86,9 +88,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body2|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body2|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -111,9 +115,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body2|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body2|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -170,9 +176,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body3|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body3|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -195,9 +203,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body3|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body3|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -254,9 +264,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body4|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body4|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -279,9 +291,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body4|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body4|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -338,9 +352,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body5|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body5|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -363,9 +379,11 @@
                         <h3>{{ project.date|date:"M, Y" }}</h3>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="text-body">
-                        <p>{{project.body5|safe|linebreaks}}</p>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body5|safe|linebreaks}}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -382,32 +400,32 @@
         </div>
       </div>
       <div class="col-12 carousel-buttons">
-          <div class="carousel-pagination">
-            <div class="row">
-              <h2><span class="num"></span></h2>
+        <div class="carousel-pagination">
+          <div class="row">
+            <h2><span class="num"></span></h2>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <button class="carousel-button carousel-button-prev" type="button" data-bs-target="#Carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </span>
+              </button>
             </div>
-            <div class="row">
-              <div class="col-6">
-                <button class="carousel-button carousel-button-prev" type="button" data-bs-target="#Carousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div class="col-6">
-                <button class="carousel-button carousel-button-next" type="button" data-bs-target="#Carousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+            <div class="col-6">
+              <button class="carousel-button carousel-button-next" type="button" data-bs-target="#Carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
