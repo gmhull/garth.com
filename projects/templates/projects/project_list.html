@@ -13,7 +13,7 @@ Garth Hull McSweeney
   </div>
   <div class="container">
     {% for project in object_list %}
-      <a href="{% url 'project_detail' project.slug %}">
+      <a class="project-link" href="{% url 'project_detail' project.slug %}">
         <div class="container project-block">
           <div class="row">
             <div class="col-md-4">
