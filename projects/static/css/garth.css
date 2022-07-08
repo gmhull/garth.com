@@ -303,6 +303,9 @@ Hero
   height: 100vh;
   background: url("../img/Cover Image.jpg") center center;
   background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   color: var(--light-cyan);
 }
@@ -778,6 +781,11 @@ Project List
 /* /////////////////////////////////////////////////////////////////////////////
 Project Detail Page
 ///////////////////////////////////////////////////////////////////////////// */
+/* @media (min-width: 782px) {
+  #project-page {
+    visibility: hidden;
+  }
+} */
 #project-page .container {
   width: 65%;
 }
@@ -827,9 +835,24 @@ Project Detail Page
   padding-top: 70px;
 }
 
+@media (max-width: 782px) {
+  #project_carousel {
+    /* visibility: hidden;
+    height: 0vh; */
+    overflow: visible;
+  }
+}
+
 #project_carousel .carousel-container {
   padding-left: 10%;
   padding-right: 2%;
+}
+
+@media (max-width: 782px) {
+  #project_carousel .carousel-container {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 }
 
 #project_carousel .carousel-inner {
@@ -845,10 +868,21 @@ Project Detail Page
   height: 100vh;
 }
 
+@media (max-width: 782px) {
+  #project_carousel .carousel-body {
+    height: auto;
+  }
+}
+
 #project_carousel .text-body {
   height: 100%;
   padding-top: 100px;
-  /* align-items: baseline; */
+}
+
+@media (max-width: 782px) {
+  #project_carousel .text-body {
+    padding-top: 20px;
+  }
 }
 
 #project_carousel .project-title h1 {
@@ -871,7 +905,6 @@ Project Detail Page
   font-size: 20px;
 }
 
-
 #project_carousel .img-wrapper {
   width: 90%;
   height: auto;
@@ -880,11 +913,18 @@ Project Detail Page
   overflow: hidden;
 }
 
+@media (max-width: 782px) {
+  #project_carousel .center-align {
+    width: 100%;
+    height: auto;
+  }
+}
+
 #project_carousel .img-wrapper::before {
-	width: 200px;
-	height: 700px;
-	transform: skew(20deg);
-	background: #fff;
+  width: 200px;
+  height: 700px;
+  transform: skew(20deg);
+  background: #fff;
 }
 
 #project_carousel .img-wrapper img {
@@ -903,7 +943,7 @@ Project Detail Page
 
 #project_carousel .carousel-buttons {
   position: fixed;
-  bottom: 15%;
+  bottom: 10%;
   right: 3%;
   width: 250px;
   display: flex;
@@ -912,6 +952,18 @@ Project Detail Page
   text-align: center;
   padding-top: 35%;
   z-index: 100;
+}
+
+@media (max-width: 782px) {
+  #project_carousel .carousel-buttons {
+    position: relative;
+    width: 100%;
+    right: 0%;
+    height: auto;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    z-index: 100;
+  }
 }
 
 #project_carousel .carousel-button-prev {
@@ -927,6 +979,7 @@ Project Detail Page
   background-position: left bottom;
   transition: all 0.3s ease-out;
 }
+
 #project_carousel .carousel-button-next {
   border: 1px solid var(--outer-space);
   border-radius: 50%;
@@ -940,19 +993,23 @@ Project Detail Page
   background-position: right bottom;
   transition: all 0.3s ease-out;
 }
+
 #project_carousel .carousel-button-prev:hover {
   background-color: var(--outer-space);
-	background-position: right bottom;
+  background-position: right bottom;
   border-color: var(--peachy);
 }
+
 #project_carousel .carousel-button-next:hover {
   background-color: var(--outer-space);
-	background-position: left bottom;
+  background-position: left bottom;
   border-color: var(--peachy);
 }
+
 #project_carousel .carousel-button-prev:hover svg {
   stroke: var(--light-cyan);
 }
+
 #project_carousel .carousel-button-next:hover svg {
   stroke: var(--light-cyan);
 }
@@ -969,6 +1026,7 @@ Project Detail Page
   transform: rotate(180deg);
   background: transparent;
 }
+
 #project_carousel .carousel-control-next-icon {
   background: transparent;
 }
@@ -987,7 +1045,20 @@ Project Detail Page
   padding-bottom: 10%;
 }
 
+@media (max-width: 782px) {
+  #project_carousel .center-align {
+    height: auto;
+  }
+}
+
+@media (max-height: 800px) and (min-width: 782px) {
+  #project_carousel .center-align {
+    height: 80vh;
+  }
+}
+
 #project_carousel .img-align {
+  width: 85%;
   height: 70vh;
   padding-top: 3%;
   display: flex;
@@ -995,6 +1066,21 @@ Project Detail Page
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+@media (max-width: 782px) {
+  #project_carousel .img-align {
+    width: 100%;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+
+@media (max-height: 800px) and (min-width: 782px) {
+  #project_carousel .img-align {
+    height: 65vh;
+  }
 }
 
 #Carousel {
