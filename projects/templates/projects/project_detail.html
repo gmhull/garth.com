@@ -13,6 +13,62 @@
       <div class="col-md-12 carousel-body">
         <div id="Carousel" class="carousel slide carousel-fade" data-bs-interval="false">
           <div class="carousel-inner">
+            {% if project.img.name == "Default.png" and project.body == "" %}
+            {% elif project.body == "" %}
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class=" text-wrapper">
+                    <div class="row">
+                      <div class="project-tag">
+                        <h5>{{ project.type }}</h5>
+                      </div>
+                      <div class="project-title">
+                        <h1>{{ project.title }}</h1>
+                      </div>
+                      <div class="project-date">
+                        <h3>{{ project.date|date:"M, Y" }}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="justify-content-center">
+                  <div class="img-align">
+                    <div class="img-wrapper">
+                      <img src="{{ project.img.url }}" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% elif project.img.name == "Default.png" %}
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class=" text-wrapper">
+                    <div class="row">
+                      <div class="project-tag">
+                        <h5>{{ project.type }}</h5>
+                      </div>
+                      <div class="project-title">
+                        <h1>{{ project.title }}</h1>
+                      </div>
+                      <div class="project-date">
+                        <h3>{{ project.date|date:"M, Y" }}</h3>
+                      </div>
+                    </div>
+                    <div class="container text-container">
+                      <div class="row">
+                        <div class="project-text-body">
+                          <p>{{project.body|safe|linebreaks}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% else %}
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-5 order-1">
@@ -44,6 +100,7 @@
                 </div>
               </div>
             </div>
+            {% endif %}
             {% if project.img2.name == "Default.png" and project.body2 == "" %}
             {% elif project.body2 == "" %}
             <div class="carousel-item">
