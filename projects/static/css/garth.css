@@ -204,6 +204,13 @@ Top Navbar
   color: var(--peachy);
 }
 
+@media (min-width: 780px) {
+  .top-nav-menu {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 .top-nav-menu a {
   color: inherit;
 }
