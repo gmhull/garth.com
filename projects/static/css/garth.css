@@ -586,36 +586,56 @@ Skills
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  background-color: var(--skobeloff);
+  background: linear-gradient(var(--rotate)
+    , var(--peachy) 45%, var(--skobeloff), var(--peachy) 55%);
+  border-radius: 20px;
   -webkit-backface-visibility: hidden;
+  animation: xyz 5s linear infinite;
   /* Safari */
   backface-visibility: visible;
-  border-radius: 20px;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes xyz {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
 }
 
 #skills .flip-card-front {
-  background-color: inherit;
+  background-color: var(--skobeloff);
   color: var(--peachy);
-  border: 3px solid var(--light-cyan);
-  border-radius: 20px;
+  border: 3px solid transparent;
+  border-radius: inherit;
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
+  background-clip: padding-box;
   /* Safari */
   backface-visibility: hidden;
 }
 
 #skills .flip-card-back {
-  background-color: inherit;
+  background-color: var(--skobeloff);
   transform: rotateY(180deg);
   padding: 5px;
-  border: 3px solid var(--light-cyan);
+  border: 3px solid transparent;
   border-radius: 20px;
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
+  background-clip: padding-box;
   /* Safari */
   backface-visibility: hidden;
 }
@@ -756,6 +776,7 @@ Project List
 
 #project-list img {
   border-radius: 20px;
+  border: 3px var(--outer-space) solid;
 }
 
 #project-list .project-title {
@@ -879,7 +900,7 @@ Project Detail Page
   }
 }
 
-@media (min-width: 768px) and (max-height: 700px) {
+@media (min-width: 768px) and (max-height: 800px) {
   #project_carousel .text-container {
     max-height: 50vh;
   }
@@ -909,6 +930,7 @@ Project Detail Page
   font-family: 'Dongle', sans-serif;
   font-size: 38px;
   font-style: oblique;
+  text-transform: uppercase;
 }
 
 #project_carousel .project-text-body p {
@@ -923,8 +945,8 @@ Project Detail Page
   border: 5px solid var(--skobeloff);
   overflow: hidden;
   display: flex;
-    justify-content: center;
-    flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @media (max-width: 767px) {
