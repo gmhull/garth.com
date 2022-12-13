@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('AWS_ACCESS_KEY_ID')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DJANGO_DEBUG') == "True")
 
-ALLOWED_HOSTS = ['garthdotcom.herokuapp.com', '.localhost', '127.0.0.1', '.garths.world', 'garthdotcom-env.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['garthdotcom.herokuapp.com', '.localhost', '127.0.0.1', '.garths.world', 'GarthDotCom-env.eba-mpvpamee.us-east-1.elasticbeanstalk.com']
 
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
