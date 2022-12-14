@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+# import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,17 +26,21 @@ SECRET_KEY = os.environ.get('AWS_ACCESS_KEY_ID')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DJANGO_DEBUG') == "True")
 
-ALLOWED_HOSTS = ['garthdotcom.herokuapp.com', '.localhost', '127.0.0.1', '.garths.world', 'GarthDotCom-env.eba-mpvpamee.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['garthdotcom.herokuapp.com', 
+                 '.localhost', 
+                 '127.0.0.1', 
+                 '.garths.world', 
+                 'env-garthdotcom.eba-9bprb3ie.us-east-1.elasticbeanstalk.com',
+                 ]
 
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
-    # 'personal',
     'projects',
     # 'dungeons',
-    'facial_recognition',
+    # 'facial_recognition',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
