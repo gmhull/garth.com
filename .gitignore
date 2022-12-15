@@ -143,6 +143,7 @@ todo.txt
 data.py
 screenshot.jpg
 runtime.txt
+whole.json
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
