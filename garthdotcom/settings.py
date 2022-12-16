@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['garthdotcom.herokuapp.com',
                  '127.0.0.1', 
                  '.garths.world',
                  'garthdotcom-env.us-east-1.elasticbeanstalk.com',
+                 '*'
                  ]
 
 SECURE_SSL_REDIRECT = False
