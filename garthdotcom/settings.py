@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['garthdotcom.herokuapp.com',
                  '.localhost', 
                  '127.0.0.1', 
                  '.garths.world',
-                 'garthdotcom-env.us-east-1.elasticbeanstalk.com',
+                 'garthdotcom-app-dev.us-east-1.elasticbeanstalk.com',
                  ]
 
 SECURE_SSL_REDIRECT = False
