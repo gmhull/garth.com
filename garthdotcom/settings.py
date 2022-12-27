@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['garthdotcom.herokuapp.com',
                  '.localhost', 
                  '127.0.0.1', 
                  '.garths.world',
-                 'garthdotcom-app-dev.us-east-1.elasticbeanstalk.com',
+                 'http://gmhull.pythonanywhere.com/',
                  ]
 
 SECURE_SSL_REDIRECT = False
@@ -88,12 +88,8 @@ WSGI_APPLICATION = 'garthdotcom.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('GDCPostgresDB'),
-        'USER': os.environ.get('GDCPostgresUser'),
-        'PASSWORD': os.environ.get('GDCPostgresPass'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),    
     }
 }
 # import dj_database_url
