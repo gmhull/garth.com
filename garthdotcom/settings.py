@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['garthdotcom.herokuapp.com',
                  '.localhost', 
                  '127.0.0.1', 
                  '.garths.world',
-                 'http://gmhull.pythonanywhere.com/',
+                 'gmhull.pythonanywhere.com/',
                  ]
 
 SECURE_SSL_REDIRECT = False
