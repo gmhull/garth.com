@@ -16,17 +16,14 @@ class Project(models.Model):
     slug = models.SlugField(max_length=140, unique=True, null=False)
     type = models.CharField(max_length=15, choices=PROJECT_TOPICS, default='PE')
     date = models.DateField()
-    body = models.TextField()
     cover_image = models.ImageField(upload_to=image_path)
-    body2 = models.TextField(blank=True, null=True)
-    body3 = models.TextField(blank=True, null=True)
-    body4 = models.TextField(blank=True, null=True)
-    body5 = models.TextField(blank=True, null=True)
-    img = models.ImageField(default="Default.png", upload_to=image_path)
-    img2 = models.ImageField(default="Default.png", upload_to=image_path)
-    img3 = models.ImageField(default="Default.png", upload_to=image_path)
-    img4 = models.ImageField(default="Default.png", upload_to=image_path)
-    img5 = models.ImageField(default="Default.png", upload_to=image_path)
 
     def __str__(self):
         return self.title
+
+
+class ProjectPage(models.Model):
+    project = models.ForeignKey(Project, related_name="pages", on_delete=models.CASCADE)
+    id = models.BigAutoField(primary_key=True)
+    text = models.TextField(blank=True, null=True)
+    img = models.ImageField(upload_to=image_path, blank=True, null=True)

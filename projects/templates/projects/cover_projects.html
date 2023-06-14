@@ -12,7 +12,7 @@ Garth Hull McSweeney
         <img src="{{ project.cover_image.url }}" class="img-fluid">
         <div class="project-info">
           <h4><a href="/projects/{{project.slug}}""> {{project.title}} </a></h4>
-          <p>{{ project.body|safe|truncatewords:15 }}</p>
+          <p>{{ project.pages.first.text|safe|truncatewords:15 }}</p>
           <p>Updated on {{ project.date|date:"m-Y" }}</p>
         </div>
       </div>
