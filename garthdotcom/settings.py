@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['garthdotcom.herokuapp.com',
                  '.localhost', 
                  '127.0.0.1', 
                  '.garths.world',
-                 'http://gmhull.pythonanywhere.com/',
+                 'gmhull.pythonanywhere.com/',
                  ]
 
 SECURE_SSL_REDIRECT = False
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'nested_inline',
 ]
 
 MIDDLEWARE = [
@@ -118,6 +119,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Redirect user to this page after a login/logout
 LOGIN_REDIRECT_URL = '/face/profile'
 LOGOUT_REDIRECT_URL = '/dungeons'
+
+# Default field type for primary keys
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
