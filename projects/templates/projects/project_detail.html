@@ -20,7 +20,7 @@
               class="carousel-item {% if page == page_list|first %}active{% endif %}"
             >
               <div class="row">
-                {% if page.body == "" %}
+                {% if not page.text %}
                 <div class="col-md-12">
                   <div class="text-wrapper">
                     <div class="row">
