@@ -3,6 +3,7 @@ backports.zoneinfo==0.2.1
 boto3==1.26.32
 botocore==1.29.32
 Django==4.1.4
+django-nested-inline==0.4.6
 django-storages==1.13.1
 jmespath==1.0.1
 Pillow==9.3.0
