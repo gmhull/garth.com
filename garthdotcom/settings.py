@@ -26,9 +26,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DJANGO_DEBUG') == "True")
 
-ALLOWED_HOSTS = ['garthdotcom.herokuapp.com', 
-                 '.localhost', 
-                 '127.0.0.1', 
+ALLOWED_HOSTS = ['garthdotcom.herokuapp.com',
+                 '.localhost',
+                 '127.0.0.1',
                  '.garths.world',
                  'gmhull.pythonanywhere.com/',
                  ]
@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'garthdotcom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),    
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 # import dj_database_url

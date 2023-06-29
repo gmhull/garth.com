@@ -1,0 +1,22 @@
+{% extends "projects/top_navbar.html" %}
+{% load static %}
+
+{% block title %}
+404 Error
+{% endblock %}
+
+{% block content %}
+
+<main id="main">
+
+  <section style="margin-top: 100px;">
+    <div class="container">
+      <div class="section-header">
+        <h2><a href="{% url 'home' %}">404 Error</a></h2>
+        <p>Not a valid page link.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

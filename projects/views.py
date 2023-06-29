@@ -16,9 +16,8 @@ class ProjectListView(ListView):
 class ProjectDetailView(DetailView):
     model = Project
     template_name = "projects/project_detail.html"
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['page_list'] = ProjectPage.objects.filter(project=self.object)
         return context
-
