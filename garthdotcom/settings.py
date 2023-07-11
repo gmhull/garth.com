@@ -155,7 +155,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 AWS_LOCATION = 'static'
-# Make all of the files we save hav epublic read access.  Allows the website to see the files.
+# Make all of the files we save have public read access.  Allows the website to see the files.
 AWS_DEFAULT_ACL = 'public-read'
 
 # Point the site to the location of static files when collecting
