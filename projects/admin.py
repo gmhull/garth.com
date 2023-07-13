@@ -9,6 +9,7 @@ class PageInline(NestedStackedInline):
 
 
 class ProjectAdmin(NestedModelAdmin):
+    model = Project
     list_display = ('title',)
     prepopulated_fields = {'slug': ('title',)}
     inlines = [PageInline,]
