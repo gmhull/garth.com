@@ -1,8 +1,12 @@
 from django.db import models
 
-def image_path(instance, filename):
+def image_path_cover(instance, filename):
     # file will be uploaded to MEDIA_ROOT/<slug>
     return '%s/%s' % (instance.slug, filename)
+
+def image_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/<slug>
+    return '%s/%s' % (instance.project.slug, filename)
 
 class Project(models.Model):
     PROJECT_TOPICS = [
@@ -15,7 +19,7 @@ class Project(models.Model):
     slug = models.SlugField(max_length=140, unique=True, null=False)
     type = models.CharField(max_length=15, choices=PROJECT_TOPICS, default='PE')
     date = models.DateField()
-    cover_image = models.ImageField(upload_to=image_path)
+    cover_image = models.ImageField(upload_to=image_path_cover)
 
     def __str__(self):
         return self.title
