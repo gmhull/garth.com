@@ -6,7 +6,8 @@ Body
   --skobeloff: #116466;
   --tumbleweed: #D9B08C;
   --peachy: #FFCB9A;
-  --light-cyan: #D1E8E2;
+  --white: #D1E8E2;
+  --white: #FFFFFF;
 }
 
 body {
@@ -61,7 +62,7 @@ a, a:hover {
   display: block;
   width: 100px;
   height: 4px;
-  background: var(--light-cyan);
+  background: var(--white);
   bottom: 0;
   left: calc(50% - 50px);
 }
@@ -74,7 +75,7 @@ a, a:hover {
 .display-container {
   padding: 50px;
   background-color: var(--skobeloff);
-  color: var(--light-cyan);
+  color: var(--white);
   border-radius: 30px;
   border: 2px solid var(--outer-space);
 }
@@ -143,7 +144,7 @@ Side Navbar
   transition: 0.3s;
   font-size: 20px;
   border-radius: 50px;
-  border: 1px solid var(--light-cyan);
+  border: 1px solid var(--white);
   background: var(--outer-space);
   height: 56px;
   width: 100%;
@@ -159,7 +160,7 @@ Side Navbar
 
 .side-nav-menu a span, .side-nav-menu a:focus span {
   padding: 0 3px 0 7px;
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 @media (min-width: 992px) {
@@ -216,7 +217,7 @@ Top Navbar
 }
 
 .top-nav-menu a:hover {
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 .navbar-toggler {
@@ -235,7 +236,7 @@ Footer
 }
 
 #contact a {
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 .waves {
@@ -311,7 +312,7 @@ Hero
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-attachment: fixed;
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 #hero::before {
@@ -383,11 +384,11 @@ Hero
 
 #hero .btn {
   background-color: var(--outer-space);
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 #hero .btn:hover {
-  background-color: var(--light-cyan);
+  background-color: var(--white);
   color: var(--outer-space);
 }
 
@@ -420,11 +421,11 @@ About
 
 #about .btn {
   background-color: var(--outer-space);
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 #about .btn:hover {
-  background-color: var(--light-cyan);
+  background-color: var(--white);
   color: var(--outer-space);
 }
 
@@ -511,7 +512,7 @@ Projects Cover Page
 }
 
 #projects .project-item .project-info p {
-  color: var(--light-cyan);
+  color: var(--white);
   font-size: 14px;
   margin-bottom: 0;
 }
@@ -554,7 +555,7 @@ About Page
 Skills
 ///////////////////////////////////////////////////////////////////////////// */
 #skills p {
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 #skills .flip-card {
@@ -702,7 +703,7 @@ Experience
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--light-cyan);
+  color: var(--white);
   text-align: left;
 }
 
@@ -731,7 +732,7 @@ Experience
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: var(--light-cyan);
+  background: var(--white);
   border: 2px solid var(--skobeloff);
 }
 
@@ -745,7 +746,7 @@ Project List
 #project-list .project-block {
   background-color: var(--skobeloff);
   padding: 15px;
-  color: var(--light-cyan);
+  color: var(--white);
   border: 5px var(--peachy);
   border-radius: 50px 20px 50px 20px;
   margin-top: 15px;
@@ -823,7 +824,7 @@ Project Detail Page
   align-self: center;
   height: 100%;
   background-color: var(--skobeloff);
-  color: var(--light-cyan);
+  color: var(--white);
   padding: 15px 25px;
   margin: 15px 0px;
   border: 3px var(--outer-space) solid;
@@ -886,7 +887,7 @@ Project Detail Page
 
 #project_carousel .text-container {
   background-color: var(--skobeloff);
-  color: var(--light-cyan);
+  color: var(--white);
   border: 2px solid var(--outer-space);
   border-radius: 30px;
   margin-top: 40px;
@@ -908,7 +909,7 @@ Project Detail Page
 
 #project_carousel .project-text-body {
   height: 100%;
-  color: var(--light-cyan);
+  color: var(--white);
 }
 
 @media (max-width: 767px) {
@@ -1040,11 +1041,11 @@ Project Detail Page
 }
 
 #project_carousel .carousel-button-prev:hover svg {
-  stroke: var(--light-cyan);
+  stroke: var(--white);
 }
 
 #project_carousel .carousel-button-next:hover svg {
-  stroke: var(--light-cyan);
+  stroke: var(--white);
 }
 
 #project_carousel .carousel-control-next, .carousel-control-prev {
@@ -1139,5 +1140,5 @@ Project Detail Page
   }
 }
 
-/* --outer-space, --skobeloff, --tumbleweed, --peachy, --light-cyan */
+/* --outer-space, --skobeloff, --tumbleweed, --peachy, --white */
 /* Fun Add-ins */
