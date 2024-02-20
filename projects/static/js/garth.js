@@ -37,7 +37,7 @@
   /**
    * Navbar links active state on scroll
    */
-  let navbarlinks = select('#navbar .scrollto', true)
+  let navbarlinks = select('#side-navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
     navbarlinks.forEach(navbarlink => {
@@ -122,18 +122,17 @@
   /**
    * Hero type effect
    */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
+//   if ($(".text-slider").length == 1) {
+//     var typed_strings = $(".text-slider-items").text();
+
+//     var typed = new Typed(".text-slider", {
+//       strings: typed_strings.split(", "),
+//       typeSpeed: 80,
+//       loop: true,
+//       backDelay: 600,
+//       backSpeed: 80,
+//     });
+//   }
 
   /**
    * Porfolio isotope and filter
