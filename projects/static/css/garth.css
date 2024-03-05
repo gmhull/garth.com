@@ -2,17 +2,23 @@
 Body
 ///////////////////////////////////////////////////////////////////////////// */
 :root {
-  --outer-space: #2C3531;
-  --skobeloff: #116466;
-  --tumbleweed: #D9B08C;
-  --peachy: #FFCB9A;
-  --white: #D1E8E2;
-  --white: #FFFFFF;
+  /* --outer-space: #2C3531;   outer-space */
+  /* --skobeloff: #116466;     skobeloff */
+  /* --tumbleweed: #D9B08C;    tumbleweed */
+  /* --peachy: #FFCB9A;        peachy */
+  /* --white: #FFFFFF;         white */
+
+  --dark-base: #2C3531;   /* outer-space */
+  --primary: #116466;     /* skobeloff */
+  --medium-accent: #D9B08C;    /* tumbleweed */
+  --light-accent: #FFCB9A;        /* peachy */
+  --white: #FFFFFF;         /* white */
+
 }
 
 body {
-  background-color: var(--tumbleweed);
-  color: var(--outer-space);
+  background-color: var(--light-accent);
+  color: var(--dark-base);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -26,7 +32,7 @@ p {
 }
 
 a, a:hover {
-  color: var(--peachy);
+  color: var(--light-accent);
 }
 
 .section-header {
@@ -42,7 +48,7 @@ a, a:hover {
   padding-top: 60px;
   padding-bottom: 20px;
   position: relative;
-  color: var(--outer-space);
+  color: var(--dark-base);
 }
 
 .section-header h2 {
@@ -52,7 +58,7 @@ a, a:hover {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: var(--outer-space);
+  color: var(--dark-base);
   font-family: 'Mochiy Pop P One', sans-serif;
 }
 
@@ -74,10 +80,10 @@ a, a:hover {
 
 .display-container {
   padding: 50px;
-  background-color: var(--skobeloff);
+  background-color: var(--primary);
   color: var(--white);
   border-radius: 30px;
-  border: 2px solid var(--outer-space);
+  border: 2px solid var(--dark-base);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -97,8 +103,8 @@ Side Navbar
 @media (max-width: 992px) {
   #side-navbar {
     width: 300px;
-    background: var(--outer-space);
-    border-right: 1px solid var(--peachy);
+    background: var(--dark-base);
+    border-right: 1px solid var(--light-accent);
     left: -300px;
   }
 }
@@ -138,19 +144,23 @@ Side Navbar
 .side-nav-menu a, .side-nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: var(--peachy);
+  color: var(--light-accent);
   padding: 10px 18px;
   margin-bottom: 8px;
   transition: 0.3s;
   font-size: 20px;
   border-radius: 50px;
   border: 1px solid var(--white);
-  background: var(--outer-space);
+  background: var(--dark-base);
   height: 56px;
   width: 100%;
   overflow: hidden;
   transition: 0.3s;
 }
+
+.side-nav-menu .active, .side-nav-menu .active:focus {
+    border: 1px solid var(--primary);
+  }
 
 .side-nav-menu a i, .side-nav-menu a:focus i {
   font-size: 26px;
@@ -170,22 +180,22 @@ Side Navbar
 
   .side-nav-menu a span, .side-nav-menu a:focus span {
     display: none;
-    color: var(--peachy);
+    color: var(--light-accent);
   }
 }
 
 .side-nav-menu a:hover, .side-nav-menu .active, .side-nav-menu .active:focus, .side-nav-menu li:hover>a {
-  color: var(--skobeloff);
-  background: var(--peachy);
+  color: var(--dark-base);
+  background: var(--light-accent);
 }
 
 .side-nav-menu a:hover span, .side-nav-menu .active span, .side-nav-menu .active:focus span, .side-nav-menu li:hover>a span {
-  color: var(--skobeloff);
+  color: var(--dark-base);
 }
 
 .side-nav-menu a:hover, .side-nav-menu li:hover>a {
   width: 100%;
-  color: var(--skobeloff);
+  color: var(--dark-base);
 }
 
 .side-nav-menu a:hover span, .side-nav-menu li:hover>a span {
@@ -201,8 +211,8 @@ Top Navbar
 }
 
 .top-nav-menu {
-  background-color: var(--outer-space);
-  color: var(--peachy);
+  background-color: var(--dark-base);
+  color: var(--light-accent);
 }
 
 @media (min-width: 768px) {
@@ -221,7 +231,7 @@ Top Navbar
 }
 
 .navbar-toggler {
-  color: var(--peachy);
+  color: var(--light-accent);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -230,8 +240,8 @@ Footer
 #contact {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: var(--outer-space);
-  color: var(--tumbleweed);
+  background-color: var(--dark-base);
+  color: var(--medium-accent);
   text-align: center;
 }
 
@@ -326,7 +336,7 @@ Hero
 }
 
 #hero h1 {
-  color: var(--skobeloff);
+  color: var(--primary);
   text-align: center;
   font-family: 'Mochiy Pop P One', sans-serif;
 }
@@ -346,7 +356,7 @@ Hero
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  border: 10px solid var(--outer-space);
+  border: 10px solid var(--dark-base);
 }
 
 @media (max-width: 1200px) {
@@ -383,13 +393,13 @@ Hero
 }
 
 #hero .btn {
-  background-color: var(--outer-space);
+  background-color: var(--dark-base);
   color: var(--white);
 }
 
 #hero .btn:hover {
   background-color: var(--white);
-  color: var(--outer-space);
+  color: var(--dark-base);
 }
 
 #hero .container {
@@ -410,7 +420,7 @@ About
 }
 
 #about h1 {
-  color: var(--tumbleweed);
+  color: var(--medium-accent);
 }
 
 #about h3 {
@@ -424,13 +434,13 @@ About
 }
 
 #about .btn {
-  background-color: var(--outer-space);
+  background-color: var(--dark-base);
   color: var(--white);
 }
 
 #about .btn:hover {
   background-color: var(--white);
-  color: var(--outer-space);
+  color: var(--dark-base);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -460,15 +470,15 @@ Projects Cover Page
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: var(--skobeloff);
+  color: var(--primary);
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
 
 #projects #project-flters li:hover, #projects #project-flters li.active-filter {
   padding: 9px 15px;
-  color: var(--peachy);
-  background-color: var(--outer-space);
+  color: var(--light-accent);
+  background-color: var(--dark-base);
   border-radius: 20px;
 }
 
@@ -487,7 +497,7 @@ Projects Cover Page
   overflow: hidden;
   border-width: 5px;
   height: auto;
-  background-color: var(--skobeloff);
+  background-color: var(--primary);
   border-radius: 15px;
 }
 
@@ -504,14 +514,14 @@ Projects Cover Page
   bottom: -50px;
   z-index: 2;
   transition: all ease-in-out 0.3s;
-  background-color: var(--outer-space);
+  background-color: var(--dark-base);
   width: 100%;
   padding: 15px 20px;
 }
 
 #projects .project-info a {
   font-size: 18px;
-  color: var(--tumbleweed);
+  color: var(--medium-accent);
   font-family: 'Mochiy Pop P One', sans-serif;
 }
 
@@ -530,6 +540,27 @@ Projects Cover Page
   bottom: 0;
 }
 
+#projects .project-item .project-tags-container {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+#projects .project-item .project-tags {
+    border-radius: 15px;
+    background-color: #6a150e;
+    display: inline;
+    padding: 2px 5px;
+    margin: 0 3px;
+    font-size: 16px;
+    border: #28184d solid 2px;
+    align-content: center;
+}
+
+#projects .project-tags p {
+    display: inline-block;
+}
+
 /* /////////////////////////////////////////////////////////////////////////////
 About Page
 ///////////////////////////////////////////////////////////////////////////// */
@@ -544,7 +575,7 @@ About Page
 }
 
 #about-page a {
-  color: var(--peachy);
+  color: var(--light-accent);
   text-align: center;
 }
 
@@ -591,8 +622,9 @@ Skills
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  background: linear-gradient(var(--rotate)
-    , var(--peachy) 45%, var(--skobeloff), var(--peachy) 55%);
+  background: var(--medium-accent);
+  /* background: linear-gradient(var(--rotate)
+    , var(--light-accent) 45%, var(--primary), var(--light-accent) 55%); */
   border-radius: 20px;
   -webkit-backface-visibility: hidden;
   animation: xyz 5s linear infinite;
@@ -617,8 +649,8 @@ Skills
 }
 
 #skills .flip-card-front {
-  background-color: var(--skobeloff);
-  color: var(--peachy);
+  background-color: var(--primary);
+  color: var(--light-accent);
   border: 3px solid transparent;
   border-radius: inherit;
   position: absolute;
@@ -631,7 +663,7 @@ Skills
 }
 
 #skills .flip-card-back {
-  background-color: var(--skobeloff);
+  background-color: var(--primary);
   transform: rotateY(180deg);
   padding: 5px;
   border: 3px solid transparent;
@@ -678,7 +710,7 @@ Experience
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: var(--outer-space);
+  color: var(--dark-base);
 }
 
 #experience .experience-item {
@@ -694,14 +726,14 @@ Experience
   font-size: 18px;
   font-weight: 600;
   font-family: "Verdana", sans-serif;
-  color: var(--skobeloff);
+  color: var(--primary);
   margin-bottom: 10px;
   text-align: left;
 }
 
 #experience h5 {
   font-size: 16px;
-  background: var(--skobeloff);
+  background: var(--primary);
   /* Edit this color for dates */
   padding: 5px 15px;
   display: inline-block;
@@ -712,7 +744,7 @@ Experience
 }
 
 #experience p {
-  color: var(--outer-space);
+  color: var(--dark-base);
   font-family: "Mochiy Pop P One", sans-serif;
 }
 
@@ -737,7 +769,7 @@ Experience
   left: -9px;
   top: 0;
   background: var(--white);
-  border: 2px solid var(--skobeloff);
+  border: 2px solid var(--primary);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -747,19 +779,25 @@ Project List
   margin-top: 30px;
 }
 
+@media (min-width: 768px) {
+    #project-list .project-block-wrapper {
+        max-width: 70%;
+    }
+}
+
 #project-list .project-block {
-  background-color: var(--skobeloff);
+  background-color: var(--primary);
   padding: 15px;
   color: var(--white);
-  border: 5px var(--peachy);
+  border: 5px var(--light-accent);
   border-radius: 50px 20px 50px 20px;
   margin-top: 15px;
-  border: 5px var(--outer-space) solid;
+  border: 5px var(--dark-base) solid;
   transition: .25s;
 }
 
 #project-list .project-block:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   z-index: 3;
 }
 
@@ -768,7 +806,7 @@ Project List
 }
 
 #project-list .project-block:hover img {
-  border: 3px var(--peachy) solid;
+  border: 3px var(--light-accent) solid;
 }
 
 #project-list .project-img {
@@ -781,12 +819,12 @@ Project List
 
 #project-list img {
   border-radius: 20px;
-  border: 3px var(--outer-space) solid;
+  border: 3px var(--dark-base) solid;
 }
 
 #project-list .project-title {
   font-size: 28px;
-  color: var(--tumbleweed);
+  color: var(--medium-accent);
   text-align: center;
   font-family: 'Mochiy Pop P One', sans-serif;
 }
@@ -796,8 +834,33 @@ Project List
   padding: 10px;
 }
 
-#project-list a:hover, a {
+#project-list .project-info p {
+    margin-bottom: 3px;
+  }
+  
+  #project-list a:hover, a {
   text-decoration: none;
+}
+
+#project-list .project-tags-container {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+#project-list .project-tags {
+    border-radius: 15px;
+    background-color: #6a150e;
+    display: inline;
+    padding: 2px 5px;
+    margin: 0 3px;
+    font-size: 16px;
+    border: #28184d solid 2px;
+    align-content: center;
+}
+
+#project-list .project-tags p {
+    display: inline-block;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -827,15 +890,15 @@ Project Detail Page
 #project-page .project-txt-col {
   align-self: center;
   height: 100%;
-  background-color: var(--skobeloff);
+  background-color: var(--primary);
   color: var(--white);
   padding: 15px 25px;
   margin: 15px 0px;
-  border: 3px var(--outer-space) solid;
+  border: 3px var(--dark-base) solid;
 }
 
 #project-page a {
-  color: var(--peachy)
+  color: var(--light-accent)
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -890,9 +953,9 @@ Project Detail Page
 }
 
 #project_carousel .text-container {
-  background-color: var(--skobeloff);
+  background-color: var(--primary);
   color: var(--white);
-  border: 2px solid var(--outer-space);
+  border: 2px solid var(--dark-base);
   border-radius: 30px;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -932,22 +995,57 @@ Project Detail Page
 }
 
 #project_carousel .project-tag h5 {
-  font-family: 'Dongle', sans-serif;
-  font-size: 38px;
-  font-style: oblique;
-  text-transform: uppercase;
+    font-family: 'Dongle', sans-serif;
+    font-size: 38px;
+    font-style: oblique;
+    text-transform: uppercase;
+    margin-bottom: 3px;
 }
 
+#project_carousel .project-tags-container {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+#project_carousel .project-tags-container::-webkit-scrollbar {
+    display: none;
+}
+
+#project_carousel .project-tags {
+    border-radius: 15px;
+    background-color: #6a150e;
+    display: inline;
+    padding: 2px 5px;
+    margin: 0 3px;
+    font-size: 16px;
+    border: #28184d solid 2px;
+    align-content: center;
+}
+
+#project_carousel .project-tags p {
+    display: inline-block;
+    margin-bottom: 3px;
+    color: var(--white);
+}
+  
+#project_carousel .project-skills {
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+    font-style: oblique;
+    /* text-transform: uppercase; */
+  }
+    
 #project_carousel .project-text-body p {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
 
 #project_carousel .img-wrapper {
-  width: 90%;
-  height: auto;
+  width: auto;
+  height: 100%;
   border-radius: 20px 40px;
-  border: 5px solid var(--skobeloff);
+  border: 5px solid var(--primary);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -968,7 +1066,7 @@ Project Detail Page
 }
 
 #project_carousel .img-wrapper img {
-  height: auto;
+  height: 100%;
 }
 
 #project_carousel .carousel-img {
@@ -1005,43 +1103,43 @@ Project Detail Page
 }
 
 #project_carousel .carousel-button-prev {
-  border: 1px solid var(--outer-space);
+  border: 1px solid var(--dark-base);
   border-radius: 50%;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to left, var(--outer-space) 40%, transparent 0%);
+  background: linear-gradient(to left, var(--dark-base) 40%, transparent 0%);
   background-size: 300% 100%;
   background-position: left bottom;
   transition: all 0.3s ease-out;
 }
 
 #project_carousel .carousel-button-next {
-  border: 1px solid var(--outer-space);
+  border: 1px solid var(--dark-base);
   border-radius: 50%;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, var(--outer-space) 40%, transparent 0%);
+  background: linear-gradient(to right, var(--dark-base) 40%, transparent 0%);
   background-size: 300% 100%;
   background-position: right bottom;
   transition: all 0.3s ease-out;
 }
 
 #project_carousel .carousel-button-prev:hover {
-  background-color: var(--outer-space);
+  background-color: var(--dark-base);
   background-position: right bottom;
-  border-color: var(--peachy);
+  border-color: var(--light-accent);
 }
 
 #project_carousel .carousel-button-next:hover {
-  background-color: var(--outer-space);
+  background-color: var(--dark-base);
   background-position: left bottom;
-  border-color: var(--peachy);
+  border-color: var(--light-accent);
 }
 
 #project_carousel .carousel-button-prev:hover svg {
@@ -1057,7 +1155,7 @@ Project Detail Page
 }
 
 #project_carousel svg {
-  stroke: var(--skobeloff);
+  stroke: var(--primary);
 }
 
 #project_carousel .carousel-control-prev-icon {
@@ -1144,5 +1242,5 @@ Project Detail Page
   }
 }
 
-/* --outer-space, --skobeloff, --tumbleweed, --peachy, --white */
+/* --dark-base, --primary, --medium-accent, --light-accent, --white */
 /* Fun Add-ins */

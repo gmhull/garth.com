@@ -1,32 +1,38 @@
-{% extends "projects/top_navbar.html" %}
-
-{% block title %}
-Garth Hull McSweeney
-{% endblock %}
-
-{% block content %}
+{% extends "projects/top_navbar.html" %} {% block title %} Garth Hull McSweeney
+{% endblock %} {% block content %}
 
 <section id="project-list">
   <div class="section-header">
     <h2>My Projects:</h2>
     <p>Here is a list of some projects that I have worked on.</p>
   </div>
-  <div class="container">
+  <div class="container project-block-wrapper">
     {% for project in object_list %}
       <a class="project-link" href="{% url 'project_detail' project.slug %}">
         <div class="container project-block">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5">
               <div class="project-img">
-                <img src="{{ project.cover_image.url }}" class="img-fluid" alt="">
+                <img
+                  src="{{ project.cover_image.url }}"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
               <div class="project-title">
                 <h3>{{ project.title }}</h3>
               </div>
               <div class="project-info">
-                <p>{{ project.pages.first.text|safe|truncatewords:45 }}</p>
+                <p>{{ project.pages.first.text|safe|truncatewords:35 }}</p>
+                <div class="project-tags-container">
+                    {% for tag in project.tags.all %}
+                    <div class="project-tags">
+                        <p>{{ tag }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
                 <p>{{ project.type }}, <i>{{ project.date|date:"M, Y" }}</i></p>
               </div>
             </div>
