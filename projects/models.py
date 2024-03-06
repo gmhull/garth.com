@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 def image_path_cover(instance, filename):
     # file will be uploaded to MEDIA_ROOT/<slug>
@@ -20,6 +21,7 @@ class Project(models.Model):
     type = models.CharField(max_length=15, choices=PROJECT_TOPICS, default='PE')
     date = models.DateField()
     cover_image = models.ImageField(upload_to=image_path_cover)
+    tags = TaggableManager()
 
     def __str__(self):
         return self.title

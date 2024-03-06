@@ -1,22 +1,22 @@
-{% extends "projects/cover_page.html" %}
+{% extends "projects/cover_page.html" %} 
+{% block title %}Garth Hull McSweeney{% endblock %} 
 
-{% block title %}
-Garth Hull McSweeney
-{% endblock %}
-
-{% block projects %}
-
-  {% for project in object_list %}
-    <div class="project-item col-lg-4 col-md-6 filter-{{ project.type }}">
-      <div class="card">
-        <img src="{{ project.cover_image.url }}" class="img-fluid">
-        <div class="project-info">
-          <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
-          <p>{{ project.pages.first.text|safe|truncatewords:15 }}</p>
-          <p>Updated on {{ project.date|date:"m-Y" }}</p>
+{% block projects %} {% for project in object_list %}
+<div class="project-item col-lg-4 col-md-6 filter-{{ project.type }}">
+  <div class="card">
+    <img src="{{ project.cover_image.url }}" class="img-fluid" />
+    <div class="project-info">
+      <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
+      <p>{{ project.pages.first.text|safe|truncatewords:15 }}</p>
+      <p>Updated on {{ project.date|date:"m-Y" }}</p>
+      <div class="project-tags-container">
+        {% for tag in project.tags.all %}
+        <div class="project-tags">
+          <p>{{ tag }}</p>
         </div>
+        {% endfor %}
       </div>
     </div>
-  {% endfor %}
-
-{% endblock %}
+  </div>
+</div>
+{% endfor %} {% endblock %}
