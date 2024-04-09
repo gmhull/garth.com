@@ -144,6 +144,7 @@ data.py
 screenshot.jpg
 runtime.txt
 whole.json
+*.sh
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
