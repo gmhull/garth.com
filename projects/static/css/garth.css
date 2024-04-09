@@ -546,19 +546,24 @@ Projects Cover Page
     overflow-x: auto;
   }
 
+  #projects .project-item .project-tags-container::-webkit-scrollbar {
+    display: none;
+}
+
 #projects .project-item .project-tags {
     border-radius: 15px;
-    background-color: #6a150e;
+    background-color: var(--dark-base);
     display: inline;
-    padding: 2px 5px;
+    padding: 0px 5px;
     margin: 0 3px;
     font-size: 16px;
-    border: #28184d solid 2px;
+    border: var(--medium-accent) solid 2px;
     align-content: center;
 }
 
 #projects .project-tags p {
     display: inline-block;
+    color: var(--white);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -850,17 +855,18 @@ Project List
 
 #project-list .project-tags {
     border-radius: 15px;
-    background-color: #6a150e;
+    background-color: var(--dark-base);
     display: inline;
     padding: 2px 5px;
     margin: 0 3px;
     font-size: 16px;
-    border: #28184d solid 2px;
+    border: var(--medium-accent) solid 2px;
     align-content: center;
 }
 
 #project-list .project-tags p {
     display: inline-block;
+    color: var(--white);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////
@@ -1014,12 +1020,12 @@ Project Detail Page
 
 #project_carousel .project-tags {
     border-radius: 15px;
-    background-color: #6a150e;
+    background-color: var(--dark-base);
     display: inline;
     padding: 2px 5px;
     margin: 0 3px;
     font-size: 16px;
-    border: #28184d solid 2px;
+    border: var(--medium-accent) solid 2px;
     align-content: center;
 }
 
