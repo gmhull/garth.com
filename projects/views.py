@@ -15,7 +15,7 @@ class ProjectListView(ListView):
 
 class ProjectDetailView(DetailView):
     model = Project
-    template_name = "projects/project_detail.html"
+    template_name = "projects/project_detail_alt.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
