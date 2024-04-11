@@ -34,13 +34,13 @@
           <div class="col-6">
             <h2>Experience</h2>
             <div class="text-center">
-              <a href="/about" class="btn">Resume</a>
+              <a href="{% url 'about' %}" class="btn">Resume</a>
             </div>
           </div>
           <div class="col-6">
             <h2>View projects</h2>
             <div class="text-center">
-              <a href="/projects" class="btn">My Projects</a>
+              <a href="{% url 'project_list' %}" class="btn">My Projects</a>
             </div>
           </div>
         </div>
@@ -54,7 +54,6 @@
     <div class="container">
       <div class="section-header">
         <h2>ABOUT ME</h2>
-        <p></p>
       </div>
 
       <div class="container display-container">

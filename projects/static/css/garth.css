@@ -23,7 +23,7 @@ body {
 }
 
 section {
-  padding: 50px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -37,7 +37,7 @@ a, a:hover {
 
 .section-header {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .section-header h1 {
@@ -76,6 +76,10 @@ a, a:hover {
 .section-header p {
   margin-bottom: 0;
   font-size: 18px;
+}
+
+.section-header a {
+  color: var(--dark-base);
 }
 
 .display-container {
@@ -325,14 +329,22 @@ Hero
   color: var(--white);
 }
 
-#hero::before {
-  content: "";
-  background: rgba(217, 176, 140, 0.3);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+@media (max-width: 767px) {
+  #hero {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 767px) {
+  #hero::before {
+    content: "";
+    background: rgba(217, 176, 140, 0.3);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 #hero h1 {
@@ -872,6 +884,10 @@ Project List
 /* /////////////////////////////////////////////////////////////////////////////
 Project Detail Page
 ///////////////////////////////////////////////////////////////////////////// */
+#project_detail {
+  margin-top: 20px;
+}
+
 @media (min-width: 767px) {
   #project_detail .container {
     width: 70%;
@@ -927,6 +943,12 @@ Project Detail Page
 #project_detail .project-title h1 {
   font-family: 'Mochiy Pop P One', sans-serif;
   text-align: center;
+  margin-top: 10px;
+}
+
+#project_detail .project-date {
+  display: flex;
+  justify-content: flex-end;
 }
 
 #project_detail .project-date h3 {
@@ -981,6 +1003,38 @@ Project Detail Page
   text-align: left;
   align-items: center;
   justify-content: center;
+}
+
+#similar-projects {
+  padding-bottom: 0;
+}
+
+#similar-projects .project-carousel {
+  background-color: var(--dark-base);
+  height: 300px;
+  width: auto;
+  padding: 10px 0;
+}
+
+#similar-projects .carousel {
+  height: 100%;
+  width: 50%;
+  margin: 0 30px;
+  margin: auto;
+}
+
+#similar-projects .carousel-inner {
+  height: 100%;
+}
+
+#similar-projects .carousel-item {
+  height: 100%;
+}
+
+#similar-projects img {
+  height: 100%;
+  object-fit: contain;
+  margin: auto;
 }
 
 /* --dark-base, --primary, --medium-accent, --light-accent, --white */

@@ -20,4 +20,5 @@ class ProjectDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['page_list'] = ProjectPage.objects.filter(project=self.object)
+        context['similar_projects'] = Project.objects.exclude(id=self.object.id).filter(type=self.object.type).order_by("-id")[:4:]
         return context
