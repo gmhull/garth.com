@@ -41,8 +41,6 @@ CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     'projects',
-    # 'dungeons',
-    # 'facial_recognition',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
