@@ -313,6 +313,17 @@ Footer
   }
 }
 
+.goat-icon {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .goat-icon {
+    width: 60px;
+  }
+}
+
 /* /////////////////////////////////////////////////////////////////////////////
 Hero
 ///////////////////////////////////////////////////////////////////////////// */
@@ -897,12 +908,12 @@ Project Detail Page
 #project_detail .title-block {
   width: 100%;
   margin-top: 10px;
+  border-bottom: solid var(--dark-base);
 }
 
 #project_detail .tags-row {
   display: flex;
   align-items: center;
-  border-bottom: solid var(--dark-base);
 }
 
 #project_detail .project-tag h5 {
@@ -1011,7 +1022,7 @@ Project Detail Page
 
 #similar-projects .project-carousel {
   background-color: var(--dark-base);
-  height: 300px;
+  /* height: 350px; */
   width: auto;
   padding: 10px 0;
 }
@@ -1024,17 +1035,40 @@ Project Detail Page
 }
 
 #similar-projects .carousel-inner {
-  height: 100%;
+  height: 250px;
 }
 
 #similar-projects .carousel-item {
   height: 100%;
 }
 
+#similar-projects .img-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
 #similar-projects img {
   height: 100%;
   object-fit: contain;
   margin: auto;
+  border-radius: 20px 40px;
+  border: 5px solid var(--primary);
+  /* margin: 7px 0; */
+}
+
+.similar-projects-header h2 {
+  color: var(--light-accent);
+  padding-top: 20px;
+}
+
+.carousel-caption {
+  bottom: 0;
+}
+
+.carousel-caption a {
+  color: #FFFFFF;
 }
 
 /* --dark-base, --primary, --medium-accent, --light-accent, --white */
