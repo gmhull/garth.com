@@ -26,60 +26,42 @@
         <h3>{{ project.date|date:"M, Y" }}</h3>
       </div>
     </div>
-    {% for page in page_list %} {% if page.text %}
-    <div class="text-container">
-      <div class="project-text-body">{{page.text|safe|linebreaks}}</div>
-    </div>
-    {% endif %} {% if page.img %}
-    <div class="center-align">
-      <div class="img-wrapper">
-        <img src="{{ page.img.url }}" class="d-block w-100" alt="..." />
+    <div class="container">
+      {% for page in page_list %} {% if page.text %}
+      <div class="text-container">
+        <div class="project-text-body">{{page.text|safe|linebreaks}}</div>
       </div>
+      {% endif %} {% if page.img %}
+      <div class="center-align">
+        <div class="img-wrapper">
+          <img src="{{ page.img.url }}" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      {% endif %} {% endfor %}
     </div>
-    {% endif %} {% endfor %}
   </div>
 </section>
 <section id="similar-projects">
-  <div class="section-header">
-    <h2>Similar Projects</h2>
-  </div>
   <div class="project-carousel">
     <div id="projectsCarousel" class="carousel slide" data-bs-interval="false">
-      <div class="carousel-indicators">
-        {% for proj in similar_projects %} {% if forloop.counter0 == 0 %}
-        <button
-          type="button"
-          data-bs-target="#projectsCarousel"
-          data-bs-slide-to="{{forloop.counter0}}"
-          class="active"
-          aria-current="true"
-          aria-label="Slide {{forloop.counter}}"
-        ></button>
-        {% else %}
-        <button
-          type="button"
-          data-bs-target="#projectsCarousel"
-          data-bs-slide-to="{{forloop.counter0}}"
-          aria-label="Slide {{forloop.counter}}"
-        ></button>
-        {% endif %} {% endfor %}
+      <div class="section-header similar-projects-header">
+        <h2>Similar Projects</h2>
       </div>
       <div class="carousel-inner">
-        {% for proj in similar_projects %} {% if forloop.counter0 == 0 %}
+        {% for proj in similar_projects %} 
+        {% if forloop.counter0 == 0 %}
         <div class="carousel-item active">
-          <img class="d-block w-100" src="{{proj.cover_image.url}}" />
-          <!-- <div class="carousel-caption d-none d-md-block">
-            <h5>{{proj.title}}</h5>
-          </div> -->
-        </div>
         {% else %}
         <div class="carousel-item">
-          <img class="d-block w-100" src="{{proj.cover_image.url}}" />
-          <!-- <div class="carousel-caption d-none d-md-block">
-            <h5>{{proj.title}}</h5>
-          </div> -->
+        {% endif %} 
+          <div class="img-wrapper">
+            <img class="img-fluid" src="{{proj.cover_image.url}}" />
+            <div class="carousel-caption d-none d-md-block">
+              <h5><a href="{% url 'project_detail' proj.slug %}">{{proj.title}}</a></h5>
+            </div>
+          </div>
         </div>
-        {% endif %} {% endfor %}
+        {% endfor %}
       </div>
       <button
         class="carousel-control-prev"

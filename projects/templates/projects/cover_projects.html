@@ -6,7 +6,7 @@
   <div class="card">
     <img src="{{ project.cover_image.url }}" class="img-fluid" />
     <div class="project-info">
-      <h4><a href="/projects/{{project.slug}}"> {{project.title}} </a></h4>
+      <h4><a href="{% url 'project_detail' proj.slug %}"> {{project.title}} </a></h4>
       <p>{{ project.pages.first.text|safe|truncatewords:15 }}</p>
       <p>Updated on {{ project.date|date:"m-Y" }}</p>
       <div class="project-tags-container">
