@@ -8,37 +8,51 @@
   </div>
   <div class="container project-block-wrapper">
     {% for project in object_list %}
-      <a class="project-link" href="{% url 'project_detail' project.slug %}">
-        <div class="container project-block">
-          <div class="row">
-            <div class="col-md-5">
-              <div class="project-img">
-                <img
-                  src="{{ project.cover_image.url }}"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="project-title">
-                <h3>{{ project.title }}</h3>
-              </div>
-              <div class="project-info">
-                <p>{{ project.pages.first.text|safe|truncatewords:35 }}</p>
-                <div class="project-tags-container">
-                    {% for tag in project.tags.all %}
-                    <div class="project-tags">
-                        <p>{{ tag }}</p>
-                    </div>
-                    {% endfor %}
+    <div class="row">
+      <div class="col-md-1 timeline-col">
+        {% if project.type == 'Engineering' %}
+        <div class="project-bullet"><i class="bx bx-wrench"></i></div>
+        {% elif project.type == 'Programming' %}
+        <div class="project-bullet"><i class="bx bx-desktop"></i></div>
+        {% elif project.type == 'Other' %}
+        <div class="project-bullet"><i class="bx bx-question-mark"></i></div>
+        {% endif %}
+        <div class="project-line"></div>
+      </div>
+      <div class="col-md-11">
+        <a class="project-link" href="{% url 'project_detail' project.slug %}">
+          <div class="container project-block">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="project-img">
+                  <img
+                    src="{{ project.cover_image.url }}"
+                    class="img-fluid"
+                    alt=""
+                  />
                 </div>
-                <p>{{ project.type }}, <i>{{ project.date|date:"M, Y" }}</i></p>
+              </div>
+              <div class="col-md-7">
+                <div class="project-title">
+                  <h3>{{ project.title }}</h3>
+                </div>
+                <div class="project-info">
+                  <p>{{ project.pages.first.text|safe|truncatewords:35 }}</p>
+                  <div class="project-tags-container">
+                      {% for tag in project.tags.all %}
+                      <div class="project-tags">
+                          <p>{{ tag }}</p>
+                      </div>
+                      {% endfor %}
+                  </div>
+                  <p>{{ project.type }}, <i>{{ project.date|date:"M, Y" }}</i></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+    </div>
     {% endfor %}
   </div>
 </section>

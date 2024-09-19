@@ -808,9 +808,46 @@ Project List
 }
 
 @media (min-width: 768px) {
-    #project-list .project-block-wrapper {
-        max-width: 70%;
-    }
+  #project-list .project-block-wrapper {
+      max-width: 60%;
+  }
+}
+
+.timeline-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .timeline-col {
+    visibility: hidden;
+  }
+}
+
+.project-bullet {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  top: 5px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.project-line {
+  position: relative;
+  width: 3px;
+  height: 90%;
+  top: -10px;
+  border-radius: 50px;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  z-index: -1;
 }
 
 #project-list .project-block {
@@ -819,7 +856,7 @@ Project List
   color: var(--white);
   border: 5px var(--light-accent);
   border-radius: 50px 20px 50px 20px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   border: 5px var(--dark-base) solid;
   transition: .25s;
 }
