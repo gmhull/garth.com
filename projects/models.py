@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from taggit.managers import TaggableManager
 
 def image_path_cover(instance, filename):
@@ -32,3 +33,15 @@ class ProjectPage(models.Model):
     id = models.BigAutoField(primary_key=True)
     text = models.TextField(blank=True, null=True)
     img = models.ImageField(upload_to=image_path, blank=True, null=True)
+
+
+class Skills(models.Model):
+    name = models.CharField(max_length=30)
+    id = models.BigAutoField(primary_key=True)
+    description = models.TextField(blank=True, null=True)
+    icon_name = models.CharField(max_length=30)
+    rating = models.PositiveSmallIntegerField(default=7, validators=[MinValueValidator(0), MaxValueValidator(10)])
+
+    class Meta:
+        verbose_name = "Skill"
+        verbose_name_plural = "Skills"

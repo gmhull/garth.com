@@ -23,7 +23,7 @@
         <a class="project-link" href="{% url 'project_detail' project.slug %}">
           <div class="container project-block">
             <div class="row">
-              <div class="col-md-5">
+              <div class="col-md-5 px-0 img-col">
                 <div class="project-img">
                   <img
                     src="{{ project.cover_image.url }}"
@@ -32,21 +32,33 @@
                   />
                 </div>
               </div>
-              <div class="col-md-7">
+              <div
+                class="col-md-7 center-align"
+                style="justify-content: space-evenly"
+              >
                 <div class="project-title">
                   <h3>{{ project.title }}</h3>
                 </div>
-                <div class="project-info">
-                  <p>{{ project.pages.first.text|safe|truncatewords:35 }}</p>
-                  <div class="project-tags-container">
-                      {% for tag in project.tags.all %}
-                      <div class="project-tags">
-                          <p>{{ tag }}</p>
-                      </div>
-                      {% endfor %}
+                <!-- <div class="project-info"> -->
+                <p class="project-description">
+                  {{ project.pages.first.text|safe|truncatewords:35 }}
+                </p>
+                <div class="project-tags-container">
+                  {% for tag in project.tags.all %}
+                  <div class="project-tags">
+                    <p>{{ tag }}</p>
                   </div>
-                  <p>{{ project.type }}, <i>{{ project.date|date:"M, Y" }}</i></p>
+                  {% endfor %}
                 </div>
+                <div class="row">
+                  <div class="col-8 pr-0" style="padding-right: 0">
+                    <p>Type: {{ project.type }}</p>
+                  </div>
+                  <div class="col-4" style="text-align: end; padding-left: 0">
+                    <p><i>{{ project.date|date:"M, Y" }}</i></p>
+                  </div>
+                </div>
+                <!-- </div> -->
               </div>
             </div>
           </div>
