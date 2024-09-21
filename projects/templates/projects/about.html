@@ -1,109 +1,30 @@
-{% extends "projects/top_navbar.html" %}
-{% load static %}
-
-{% block title %}
-About Garth
-{% endblock %}
-
-{% block content %}
+{% extends "projects/top_navbar.html" %} {% load static %} {% block title %}
+About Garth {% endblock %} {% block content %}
 <div id="about-page">
-
   <section id="skills">
     <div class="container">
       <div class="section-header">
-        <h2 style="padding-bottom:20px;">Skills</h2>
+        <h2 style="padding-bottom: 20px">Skills</h2>
         <p></p>
       </div>
 
       <div class="row">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="card-title">Solidworks</h3>
+        {% for skill in skills %}
+        <div class="col-lg-4 col-md-6 skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-icon">
+              <i class="bx bx-{{skill.icon_name}}"></i>
             </div>
-            <div class="flip-card-back">
-              <p class="card-description">
-                I have been working with Solidworks for the past 10 years on various
-                school and personal projects.  I earned my expert certification
-                in mechanical design from Dassault Systemes.
-              </p>
-            </div>
+            <h3 class="skill-title">{{skill.name}}</h3>
+            <p class="skill-description">
+              {{skill.description|safe}}
+            </p>
+            <!-- <div class="skill-rating">{{skill.rating}}</div> -->
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="card-title">3D Printing</h3>
-            </div>
-            <div class="flip-card-back">
-              <p class="card-description">
-                I have always been excited about creating and realizing different ideas.
-                3D printing has been a great way to rapidly prototype ideas.  I
-                use a Prusa MK2S printer with MMU for projects.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="card-title">Inventor Fusion</h3>
-            </div>
-            <div class="flip-card-back">
-              <p class="card-description">
-                In addition to Solidworks, I have experience with other modeling
-                software such as Inventor. I also have experience with Autocad,
-                Maya, and ZBrush.
-              </p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
 
-      <div class="row">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="card-title">Python</h3>
-            </div>
-            <div class="flip-card-back">
-              <p class="card-description">
-                I started programming in high school and have picked it up again after
-                college.  I use python to explore topics in Machine Learning,
-                web development, and more.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="card-title">Arduino</h3>
-            </div>
-            <div class="flip-card-back">
-              <p class="card-description">
-                Along with coding, I have been developing an interest in robotics and
-                electronics.  My main project has been a quadcopter run using an
-                Arduino Uno and a 3D printed body.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3 class="card-title">Web Design</h3>
-            </div>
-            <div class="flip-card-back">
-              <p class="card-description">
-                I like to try new things, building websites is one of them.  Garths.world is
-                the second site that I have made.  The first one I made in Albania as
-                a part of a historical conservation project.  Check it out at Xhubleta.org
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -121,13 +42,30 @@ About Garth
             <h5>September 2020 - Present</h5>
             <p><i>MilliporeSigma - Jaffrey, NH</i></p>
             <ul>
-              <li>Implemented PLC code updates to run product cycles in parallel and increase throughput by 40%.</li>
-              <li>Reduced downtime by troubleshooting and resolving issues.  Analyzed data from tested devices or experiments to identify and fix machine malfunctions or adjust machine settings.</li>
-              <li>Optimized injection molding settings to increase product yields up to 40%.  Led design of experiments to modify manufacturing equipment settings to improve device yields.</li>
-              <li>Created CAD designs/drawings to develop machine improvements.  Designed component to resolve issues of new die punch not working as intended.  Worked with manufacturing to build the final design.</li>
-              <li>Develop a new Manufacturing Execution System (MES) to digitize the manufacturing process.</li>
-              <li>Communicate with other departments to meet quality and production needs.</li>
-              <li>Scheduled repairs and discussed improvements of equipment with 3rd party manufacturers.</li>
+              <li>
+                Implement PLC code updates to increase machine throughput by
+                +40%.
+              </li>
+              <li>
+                Analyze and resolved common machine malfunctions, reducing
+                downtime.
+              </li>
+              <li>
+                Optimize injection molding settings, boosting product yields by
+                40%.
+              </li>
+              <li>
+                Design mechanical components and assemblies to build custom
+                machine improvements.
+              </li>
+              <li>
+                Collaborated with departments to meet quality and production
+                goals
+              </li>
+              <li>
+                Coordinated equipment repairs and improvements with third-party
+                manufacturers.
+              </li>
             </ul>
           </div>
           <div class="experience-item">
@@ -135,8 +73,14 @@ About Garth
             <h5>May - August, 2018</h5>
             <p><i>Boston Dynamics - Waltham, MA</i></p>
             <ul>
-              <li>Developed machine learning image classification datasets used to locate warehouse boxes in 3D space.</li>
-              <li>Improved robotic image recognition for shipping container applications.</li>
+              <li>
+                Developed machine learning datasets for warehouse box
+                classification.
+              </li>
+              <li>
+                Enhanced robotic image recognition for shipping container
+                applications.
+              </li>
             </ul>
           </div>
           <div class="experience-item">
@@ -173,7 +117,6 @@ About Garth
       </div>
     </div>
   </section>
-
 </div>
 
 {% endblock %}

@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Project, ProjectPage
+from .models import Project, ProjectPage, Skills
 
 # Create your views here.
 def about(request):
-    return render(request, 'projects/about.html')
+    skills = Skills.objects.all().order_by("-id")
+    context = {
+        'skills': skills,
+    }
+    return render(request, 'projects/about.html', context)
 
 def projects(request):
     return render(request, 'projects/projects.html')

@@ -2,7 +2,7 @@
 {% block title %}Garth Hull McSweeney{% endblock %} 
 
 {% block projects %} {% for project in object_list %}
-<div class="project-item col-lg-4 col-md-6 filter-{{ project.type }}">
+<div class="project-item col-xl-4 col-md-6 filter-{{ project.type }}">
   <div class="card">
     <img src="{{ project.cover_image.url }}" class="img-fluid" />
     <div class="project-info">

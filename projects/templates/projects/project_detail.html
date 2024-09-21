@@ -1,68 +1,70 @@
 {% extends "projects/top_navbar.html" %} {% load static %} {% block title %}
 {{project.title}} {% endblock %} {% block content %}
+
 <section id="project_detail">
-  <div class="container">
-    <div class="title-block">
-      <div class="row tags-row">
-        <div class="col-md-4 order-1">
-          <div class="project-tag">
-            <h5>{{ project.type }}</h5>
-          </div>
-        </div>
-        <div class="col-md-8 order-2">
-          <div class="project-tags-container">
-            {% for tag in project.tags.all %}
-            <div class="project-tags">
-              <p>{{ tag }}</p>
-            </div>
-            {% endfor %}
-          </div>
+  <div class="title-block">
+    <div class="row top-row">
+      <div class="col-sm-6 order-1">
+        <div class="project-type">
+          <h3>{{ project.type }}</h3>
         </div>
       </div>
-      <div class="project-title">
-        <h1>{{ project.title }}</h1>
-      </div>
-      <div class="project-date">
-        <h3>{{ project.date|date:"M, Y" }}</h3>
+      <div class="col-sm-6 order-2">
+        <div class="project-date">
+          <h3>{{ project.date|date:"M, Y" }}</h3>
+        </div>
       </div>
     </div>
-    <div class="container">
-      {% for page in page_list %} {% if page.text %}
+    <div class="project-title">
+      <h1>{{ project.title }}</h1>
+    </div>
+    <div class="project-tags-container">
+      {% for tag in project.tags.all %}
+      <div class="project-tags">
+        <p>{{ tag }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row mx-0">
+    {% for page in page_list %} {% if page.text %}
+    <div class="col-md-7 center-align">
       <div class="text-container">
         <div class="project-text-body">{{page.text|safe|linebreaks}}</div>
       </div>
-      {% endif %} {% if page.img %}
-      <div class="center-align">
-        <div class="img-wrapper">
-          <img src="{{ page.img.url }}" class="d-block w-100" alt="..." />
-        </div>
-      </div>
-      {% endif %} {% endfor %}
     </div>
+    {% endif %} {% if page.img %}
+    <div class="col-md-5 center-align">
+      <div class="img-wrapper">
+        <img src="{{ page.img.url }}" class="d-block w-100" alt="..." />
+      </div>
+    </div>
+    {% endif %} {% endfor %}
   </div>
 </section>
 <section id="similar-projects">
   <div class="project-carousel">
+    <div class="similar-projects-header">
+      <h2>Similar Projects</h2>
+    </div>
     <div id="projectsCarousel" class="carousel slide" data-bs-interval="false">
-      <div class="section-header similar-projects-header">
-        <h2>Similar Projects</h2>
-      </div>
       <div class="carousel-inner">
         {% for proj in similar_projects %} 
         {% if forloop.counter0 == 0 %}
         <div class="carousel-item active">
         {% else %}
         <div class="carousel-item">
-        {% endif %} 
-          <div class="img-wrapper">
-            <img class="img-fluid" src="{{proj.cover_image.url}}" />
-            <div class="carousel-caption d-none d-md-block">
-              <h5><a href="{% url 'project_detail' proj.slug %}">{{proj.title}}</a></h5>
+          {% endif %} 
+            <div class="img-wrapper">
+              <img class="img-fluid" src="{{proj.cover_image.url}}" />
+              <div class="carousel-caption">
+                <h5><a href="{% url 'project_detail' proj.slug %}">{{proj.title}}</a></h5>
+              </div>
             </div>
-          </div>
         </div>
         {% endfor %}
       </div>
+      {% if similar_projects|length > 1 %}
       <button
         class="carousel-control-prev"
         type="button"
@@ -81,6 +83,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+      {% endif %} 
     </div>
   </div>
 </section>
