@@ -260,19 +260,17 @@ Top Navbar
   margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
-  #top-navbar .container-fluid,
-  .sm-navbar .container-fluid {
-    margin: 0 var(--page-padding);
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 #top-navbar .container-fluid,
 .sm-navbar .container-fluid {
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  #top-navbar .container-fluid,
+  .sm-navbar .container-fluid {
+    margin: 0 var(--page-padding);
+  }  
+}  
 
 /* /////////////////////////////////////////////////////////////////////////////
 Hero
