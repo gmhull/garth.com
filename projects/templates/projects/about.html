@@ -1,7 +1,8 @@
 {% extends "projects/top_navbar.html" %} {% load static %} 
 {% block title %} About Garth {% endblock %} {% block content %}
 <div id="about-page">
-  <section id="skills">
+    {% if skills %}
+    <section id="skills">
     <div class="container">
       <div class="section-header">
         <h2 style="padding-bottom: 20px">Skills</h2>
@@ -27,6 +28,7 @@
 
     </div>
   </section>
+  {% endif %}
 
   <section id="experience">
     <div class="container">
