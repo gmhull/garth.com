@@ -1,0 +1,24 @@
+{% extends "projects/top_navbar.html" %} {% block title %} Recipes
+{% endblock %} {% block content %}
+
+<section id="recipe-list">
+    <div class="section-header">
+        <h2>Recipes</h2>
+        <p>This is a list of some recipes that I have saved for easy access.</p>
+    </div>
+    <div class="container recipe-block-wrapper">
+        {% for recipe in object_list %}
+        <div class="row">
+            <h2>{{ recipe.title }}</h2>
+            <h2>{{ recipe.date }}</h2>
+            <h2>{{ recipe.ingredients }}</h2>
+            <h2>{{ recipe.description }}</h2>
+            <h2>{{ recipe.instructions }}</h2>
+            <h2>{{ recipe.servings }}</h2>
+            <h2>{{ recipe.time_to_make }}</h2>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

@@ -41,6 +41,7 @@ CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     'projects',
+    'recipes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
