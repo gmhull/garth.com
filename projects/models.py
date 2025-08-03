@@ -12,8 +12,10 @@ def image_path(instance, filename):
 
 class Project(models.Model):
     PROJECT_TOPICS = [
+        ('Art', 'Art'),
         ('Engineering', 'Engineering'),
         ('Programming', 'Programming'),
+        ('Woodworking', 'Woodworking'),
         ('Other', 'Other')
     ]
     id = models.AutoField(primary_key=True)
