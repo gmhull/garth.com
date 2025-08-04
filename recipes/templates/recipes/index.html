@@ -1,24 +1,129 @@
-{% extends "projects/top_navbar.html" %} {% block title %} Recipes
-{% endblock %} {% block content %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Garth Hull McSweeney" />
+    <title>{% block title %}Garth Hull McSweeney{% endblock %}</title>
 
-<section id="recipe-list">
-    <div class="section-header">
-        <h2>Recipes</h2>
-        <p>This is a list of some recipes that I have saved for easy access.</p>
-    </div>
-    <div class="container recipe-block-wrapper">
-        {% for recipe in object_list %}
-        <div class="row">
-            <h2>{{ recipe.title }}</h2>
-            <h2>{{ recipe.date }}</h2>
-            <h2>{{ recipe.ingredients }}</h2>
-            <h2>{{ recipe.description }}</h2>
-            <h2>{{ recipe.instructions }}</h2>
-            <h2>{{ recipe.servings }}</h2>
-            <h2>{{ recipe.time_to_make }}</h2>
-        </div>
-        {% endfor %}
-    </div>
-</section>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="{% static 'css/garth2.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/recipes.css' %}" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-{% endblock %}
+    <link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&family=Mochiy+Pop+P+One&family=Oleo+Script+Swash+Caps:wght@700&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-17M7ZNQTD7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-17M7ZNQTD7");
+    </script>
+  </head>
+
+  <body class="body">
+    {% block main %} {% endblock %} {% if project %} {% else %}
+
+    <div>
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(182, 77, 46, 0.7)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(182, 77, 46, 0.5)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(182, 77, 46, 0.3)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="7"
+            fill="rgba(182, 77, 46, 1)"
+          />
+        </g>
+      </svg>
+    </div>
+
+    <footer id="contact">
+      <div class="container">
+        <img
+          src="{% static 'img/Goat_Head.png' %}"
+          alt="Goat Icon"
+          class="goat-icon"
+        />
+        <p>
+          Built for Garth, by Garth. You can find me at these links below.
+          <br />
+          <a href="https://www.linkedin.com/in/garth-mcsweeney-39aa99150/"
+            >LinkedIn</a
+          >
+          |
+          <a href="https://github.com/gmhull">Github</a>
+          |
+          <a href="https://www.thingiverse.com/gdudud/designs">Thingiverse</a>
+        </p>
+      </div>
+    </footer>
+    {% endif %}
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

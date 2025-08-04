@@ -1,4 +1,4 @@
-{% extends "projects/index.html" %} {% load static %} {% block title %} 
+{% extends "recipes/index.html" %} {% load static %} {% block title %} 
 {% endblock %} {% block main %}
 <header id="top-navbar">
   <nav class="navbar top-nav-menu navbar-expand-md">
@@ -29,13 +29,8 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="personalDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Personal
-            </a>
-            <div class="dropdown-menu" aria-labelledby="personalDropdown">
-              <a class="nav-link" href="{% url 'recipe_list' %}">Recipes</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'recipe_list' %}">Recipes</a>
           </li>
         </ul>
       </div>

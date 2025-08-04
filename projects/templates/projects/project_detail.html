@@ -3,6 +3,7 @@
 
 <section id="project_detail">
   <div class="title-block">
+    <div class="title-block-background"></div>
     <div class="row top-row">
       <div class="col-sm-6 order-1">
         <div class="project-type">
@@ -26,8 +27,8 @@
       {% endfor %}
     </div>
   </div>
+  {% for page in page_list %} {% if page.text %}
   <div class="row mx-0">
-    {% for page in page_list %} {% if page.text %}
     <div class="col-md-7 center-align">
       <div class="text-container">
         <div class="project-text-body">{{page.text|safe|linebreaks}}</div>
@@ -39,8 +40,8 @@
         <img src="{{ page.img.url }}" class="d-block w-100" alt="..." />
       </div>
     </div>
-    {% endif %} {% endfor %}
   </div>
+  {% endif %} {% endfor %}
 </section>
 <section id="similar-projects">
   <div class="project-carousel">

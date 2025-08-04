@@ -1,0 +1,245 @@
+/* /////////////////////////////////////////////////////////////////////////////
+Recipes List
+///////////////////////////////////////////////////////////////////////////// */
+#recipe-list .recipe-block-wrapper {
+    width: 70%;
+}
+
+#recipe-list .recipe-block {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 20px 50px 20px 50px;
+    margin-bottom: 15px;
+    border: 5px var(--dark-base) solid;
+    transition: 0.25s;
+    overflow: hidden;
+}
+
+#recipe-list .recipe-block:hover {
+  border-color: var(--light-accent);
+  background-color: #b64e2e;
+}
+
+#recipe-list .recipe-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px var(--dark-base) solid;
+}
+
+@media (max-width: 768px) {
+  #recipe-list .recipe-img {
+    border-right: 0px;
+  }
+}
+
+#recipe-list .recipe-title {
+    font-size: 28px;
+    color: var(--light-accent);
+    text-align: center;
+    font-family: "Mochiy Pop P One", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 1.5rem;
+}
+
+#recipe-list .recipe-title:hover {
+    text-decoration: underline;
+}
+
+#recipe-list .recipe-description {
+  border-top: var(--dark-base) solid 2px;
+  border-bottom: var(--dark-base) solid 2px;
+  margin: 5px 5% 5px 5%;
+  padding: 5px 0;
+}
+
+@media (max-width: 768px) {
+  #recipe-list .recipe-description {
+    margin: 0 0 5px 0;
+  }
+}
+
+#recipe-list p {
+  margin-bottom: 3px;
+}
+
+#recipe-list .recipe-tags-container {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#recipe-list .recipe-tags {
+  border-radius: 15px;
+  background-color: var(--dark-base);
+  display: inline;
+  padding: 2px 5px;
+  margin: 0 3px;
+  font-size: 16px;
+  border: var(--medium-accent) solid 2px;
+  align-content: center;
+}
+
+#recipe-list .recipe-tags p {
+  display: inline-block;
+  color: var(--white);
+  margin: 0;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////
+Recipe Detail
+///////////////////////////////////////////////////////////////////////////// */
+#recipe-detail .title-block {
+  border-bottom: solid var(--light-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(217, 176, 140, 0.3);
+  border-radius: 2rem 2rem 0 0;
+}
+
+@media (max-width: 768px) {
+  #recipe-detail .title-block {
+    margin: 5px;
+  }
+}
+
+#recipe-detail .top-row {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  #recipe-detail .top-row {
+    width: 100%;
+  }
+}
+
+#recipe-detail .recipe-date {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#recipe-detail .recipe-date h3 {
+  font-size: 18px;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+#recipe-detail .recipe-tags-container {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  text-align: center;
+}
+
+#recipe-detail .recipe-tags-container::-webkit-scrollbar {
+  display: none;
+}
+
+#recipe-detail .recipe-tags {
+  border-radius: 15px;
+  background-color: var(--primary);
+  display: inline;
+  padding: 0px 5px;
+  margin: 0 3px;
+  font-size: 16px;
+  border: var(--medium-base) solid 2px;
+  align-content: center;
+}
+
+#recipe-detail .recipe-tags p {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: var(--white);
+}
+
+#recipe-detail .recipe-title h1 {
+  font-family: "Mochiy Pop P One", sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+#recipe-detail .recipe-title h1::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--white);
+  bottom: 0px;
+  left: calc(50% - 50px);
+}
+
+#recipe-detail .recipe-details {
+  width: 50%;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  #recipe-detail .recipe-details {
+    width: 100%;
+  }
+}
+
+#recipe-detail .recipe-details p {
+  margin: 0;
+}
+
+#recipe-detail .recipe-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px var(--dark-base) solid;
+    border-radius: 3rem;
+    background-color: var(--medium-base);
+}
+
+@media (max-width: 768px) {
+  #recipe-detail .recipe-img {
+    border-right: 0px;
+  }
+}
+
+
+#recipe-detail .recipe-block-wrapper {
+  width: 60%;
+  background-color: rgba(217, 176, 140, 0.3);
+  padding: 2rem 10px;
+  border-radius: 0 0 2rem 2rem;
+}
+
+@media (max-width: 768px) {
+  #recipe-detail .recipe-block-wrapper {
+    width: 100%;
+  }
+}
+
+#recipe-detail .recipe-block-wrapper h4 {
+  font-size: 20px;
+}
+
+#recipe-detail .recipe-block-wrapper p {
+  font-size: 18px;
+}
+
+#recipe-detail .recipe-last-update {
+  text-align: end;
+}

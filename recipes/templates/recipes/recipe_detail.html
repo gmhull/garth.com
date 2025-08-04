@@ -1,0 +1,45 @@
+{% extends "recipes/top_navbar.html" %} {% block title %} Recipe Detail
+{% endblock %} {% load custom_filters %}{% block content %}
+
+<section id="recipe-detail">
+  <div class="title-block">
+    <div class="row top-row">
+      <div class="col">
+        <div class="recipe-date">
+          <h3>Recipe Added: {{ recipe.date }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-title">
+      <h1>{{ recipe.title }}</h1>
+    </div>
+    <div class="recipe-details">
+        <p class="recipe-servings">Servings: <i>{{ recipe.servings }}</i></p>
+        <p class="recipe-time-to-make">Time to Prepare: <i>{{ recipe.time_to_make }} minutes</i></p>
+    </div>
+    <div class="recipe-tags-container">
+        <h4>Tags:</h4>
+      {% for tag in recipe.tags.all %}
+      <div class="recipe-tags">
+        <p>{{ tag }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+    <div class="container recipe-block-wrapper">
+        <div class="recipe-img">
+            <img src="{{ recipe.cover_image.url }}" alt="Pic of {{ recipe.title }}" class="img-fluid"/>
+        </div>
+        <h4 class="recipe-description">{{ recipe.description }}</h4>
+        <br>
+        <div class="container">
+            <h4 class="recipe-section-title">Ingredients:</h4>
+            <p class="recipe-ingredients">{{ recipe.ingredients|to_ordered_list }}</p> 
+            <h4 class="recipe-section-title">Instructions:</h4>
+            <p class="recipe-instructions">{{ recipe.instructions|to_ordered_list }}</p>
+            <p class="recipe-last-update">Last Updated: {{ recipe.last_update }}</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

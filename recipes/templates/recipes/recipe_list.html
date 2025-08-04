@@ -1,24 +1,52 @@
-{% extends "projects/top_navbar.html" %} {% block title %} Recipes
-{% endblock %} {% load custom_filters %}{% block content %}
+{% extends "recipes/top_navbar.html" %} {% block title %} Recipes {% endblock %}
+{% load custom_filters %}{% block content %}
 
 <section id="recipe-list">
-    <div class="section-header">
-        <h2>Recipes</h2>
-        <p>This is a list of some recipes that I have saved for easy access.</p>
-    </div>
-    <div class="container recipe-block-wrapper">
-        {% for recipe in object_list %}
-        <div class="row">
-            <h2>{{ recipe.title }}</h2>
-            <h2>{{ recipe.date }}</h2>
-            <p>{{ recipe.ingredients|to_ordered_list }}</p> 
-            <h2>{{ recipe.description }}</h2>
-            <h2>{{ recipe.instructions|to_ordered_list }}</h2>
-            <h2>{{ recipe.servings }}</h2>
-            <h2>{{ recipe.time_to_make }}</h2>
+  <div class="section-header">
+    <h2>Recipes</h2>
+    <p>This is a list of some recipes that I have saved for easy access.</p>
+  </div>
+  <div class="container recipe-block-wrapper">
+    {% for recipe in object_list %}
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'recipe_detail' recipe.slug %}">
+                <div class="container recipe-block">
+                <div class="row">
+                    <div class="col-md-5 px-0 img-col">
+                        <div class="recipe-img">
+                            <img
+                            src="{{ recipe.cover_image.url }}"
+                            alt="Pic of {{ recipe.title }}"
+                            class="img-fluid"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-md-7 center-align">
+                        <h1 class="recipe-title">{{ recipe.title }}</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="recipe-servings">Servings: <i>{{ recipe.servings }}</i></p>
+                                <p class="recipe-time-to-make">Approx Cook Time: <i>{{ recipe.time_to_make }} minutes</i></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="recipe-date">Created: <i>{{ recipe.date }}</i></p>
+                            </div>
+                        </div>
+                        <h4 class="recipe-description">{{ recipe.description|safe|truncatewords:15 }}</h4>
+                        <div class="recipe-tags-container">
+                            {% for tag in recipe.tags.all %}
+                            <p class="recipe-tags">{{ tag }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </a>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+  </div>
 </section>
 
 {% endblock %}

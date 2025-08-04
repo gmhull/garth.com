@@ -10,13 +10,14 @@ class Recipe(models.Model):
     title = models.CharField(max_length=140)
     slug = models.SlugField(max_length=140, unique=True, null=False)
     date = models.DateField(auto_now_add=True)
+    last_update = models.DateField(auto_now=True)
     cover_image = models.ImageField(upload_to=image_path)
 
     ingredients = models.TextField()
     description = models.TextField()
     instructions = models.TextField()
     servings = models.PositiveSmallIntegerField()
-    time_to_make = models.FloatField()
+    time_to_make = models.PositiveSmallIntegerField()
 
     tags = TaggableManager()
 

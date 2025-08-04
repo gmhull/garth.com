@@ -14,6 +14,10 @@
         <div class="project-bullet"><i class="bx bx-wrench"></i></div>
         {% elif project.type == 'Programming' %}
         <div class="project-bullet"><i class="bx bx-desktop"></i></div>
+        {% elif project.type == 'Woodworking' %}
+        <div class="project-bullet"><i class="bx bx-chair"></i></div>
+        {% elif project.type == 'Art' %}
+        <div class="project-bullet"><i class="bx bx-brush"></i></div>
         {% elif project.type == 'Other' %}
         <div class="project-bullet"><i class="bx bx-question-mark"></i></div>
         {% endif %}
@@ -39,7 +43,6 @@
                 <div class="project-title">
                   <h3>{{ project.title }}</h3>
                 </div>
-                <!-- <div class="project-info"> -->
                 <p class="project-description">
                   {{ project.pages.first.text|safe|truncatewords:35 }}
                 </p>
@@ -58,7 +61,6 @@
                     <h5><i>{{ project.date|date:"M, Y" }}</i></h5>
                   </div>
                 </div>
-                <!-- </div> -->
               </div>
             </div>
           </div>
