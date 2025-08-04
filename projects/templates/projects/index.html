@@ -50,69 +50,71 @@
     {% block main %} {% endblock %} {% if project %} {% else %}
 
     <div>
-      <svg
-        class="waves"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shape-rendering="auto"
-      >
-        <defs>
-          <path
-            id="gentle-wave"
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          />
-        </defs>
-        <g class="parallax">
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="0"
-            fill="rgba(182, 77, 46, 0.7)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="3"
-            fill="rgba(182, 77, 46, 0.5)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="5"
-            fill="rgba(182, 77, 46, 0.3)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="7"
-            fill="rgba(182, 77, 46, 1)"
-          />
-        </g>
-      </svg>
-    </div>
-
-    <footer id="contact">
-      <div class="container">
-        <img
-          src="{% static 'img/Goat_Head.png' %}"
-          alt="Goat Icon"
-          class="goat-icon"
-        />
-        <p>
-          Built for Garth, by Garth. You can find me at these links below.
-          <br />
-          <a href="https://www.linkedin.com/in/garth-mcsweeney-39aa99150/"
-            >LinkedIn</a
-          >
-          |
-          <a href="https://github.com/gmhull">Github</a>
-          |
-          <a href="https://www.thingiverse.com/gdudud/designs">Thingiverse</a>
-        </p>
+      <div>
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(182, 77, 46, 0.7)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(182, 77, 46, 0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(182, 77, 46, 0.3)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="7"
+              fill="rgba(182, 77, 46, 1)"
+            />
+          </g>
+        </svg>
       </div>
-    </footer>
+
+      <footer id="contact">
+        <div class="container">
+          <img
+            src="{% static 'img/Goat_Head.png' %}"
+            alt="Goat Icon"
+            class="goat-icon"
+          />
+          <p>
+            Built for Garth, by Garth. You can find me at these links below.
+            <br />
+            <a href="https://www.linkedin.com/in/garth-mcsweeney-39aa99150/"
+              >LinkedIn</a
+            >
+            |
+            <a href="https://github.com/gmhull">Github</a>
+            |
+            <a href="https://www.thingiverse.com/gdudud/designs">Thingiverse</a>
+          </p>
+        </div>
+      </footer>
+    </div>
     {% endif %}
 
     <script
