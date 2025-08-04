@@ -29,8 +29,13 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'recipe_list' %}">Recipes</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              Personal
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'recipe_list' %}">Recipes</a></li>
+            </ul>
           </li>
         </ul>
       </div>
