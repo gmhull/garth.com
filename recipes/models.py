@@ -19,6 +19,15 @@ class Recipe(models.Model):
     servings = models.PositiveSmallIntegerField()
     time_to_make = models.PositiveSmallIntegerField()
 
+    MEAL_TYPES = [
+        ('B', 'Breakfast'),
+        ('L', 'Lunch'),
+        ('Di', 'Dinner'),
+        ('S', 'Snack'),
+        ('De', 'Dessert')
+    ]
+    type = models.CharField(max_length=15, choices=MEAL_TYPES, default='D')
+
     tags = TaggableManager()
 
     def __str__(self):
