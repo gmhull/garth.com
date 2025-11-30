@@ -119,8 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Redirect user to this page after a login/logout
-LOGIN_REDIRECT_URL = '/face/profile'
-LOGOUT_REDIRECT_URL = '/dungeons'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Default field type for primary keys
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'

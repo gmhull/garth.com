@@ -1,0 +1,28 @@
+{% extends "projects/top_navbar.html" %} {% load static %} {% block title %} Login
+{% endblock %} {% block content %}
+
+<section id="accounts">
+    <div class="container accounts-container">
+        <h2>Login Page</h2>
+
+        <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table class="form-input-table">
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        </table>
+
+        <input type="submit" value="Login">
+        </form>
+
+        <br>
+        <p><a href="{% url 'password_reset' %}">Lost Password?</a></p>
+    </div>
+</section>
+{% endblock %}

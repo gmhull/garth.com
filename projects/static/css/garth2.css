@@ -281,6 +281,17 @@ Top Navbar
   color: var(--white);
 }
 
+#top-navbar .dropdown-item {
+  color: inherit;
+}
+
+#top-navbar .logout-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+}
+
 /* /////////////////////////////////////////////////////////////////////////////
 Hero
 ///////////////////////////////////////////////////////////////////////////// */
@@ -1149,4 +1160,27 @@ Project Detail Page
 .carousel-caption h5 {
   color: #ffffff;
   margin-bottom: 0;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+Accounts
+///////////////////////////////////////////////////////////////////////////// */
+#accounts .accounts-container {
+  background-color: var(--light-accent);
+  color: var(--dark-accent);
+  padding: 20px 2rem;
+  text-align: center;
+  border: var(--dark-base) solid 3px;
+  border-radius: 2rem;
+  width: 60%;
+}
+
+#accounts .form-input-table {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+#accounts .form-input {
+  margin: 1rem 0;
 }
