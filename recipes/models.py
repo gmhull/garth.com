@@ -26,7 +26,7 @@ class Recipe(models.Model):
         ('S', 'Snack'),
         ('De', 'Dessert')
     ]
-    type = models.CharField(max_length=15, choices=MEAL_TYPES, default='D')
+    type = models.CharField(max_length=2, choices=MEAL_TYPES, default='D')
 
     tags = TaggableManager()
 

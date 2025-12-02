@@ -1,8 +1,8 @@
 /* /////////////////////////////////////////////////////////////////////////////
 Recipes List
 ///////////////////////////////////////////////////////////////////////////// */
-#recipe-list .recipe-block-wrapper {
-    width: 70%;
+#recipe-list .recipe-item a {
+    color: var(--white);
 }
 
 #recipe-list .recipe-block {
@@ -72,6 +72,7 @@ Recipes List
   overflow-x: auto;
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 #recipe-list .recipe-tags {
@@ -91,23 +92,57 @@ Recipes List
   margin: 0;
 }
 
+#recipe-list #recipe-flters {
+  padding: 0;
+  margin: 0 auto 25px auto;
+  list-style: none;
+  text-align: center;
+  background-color: inherit;
+  border-radius: 50px;
+  padding: 2px 15px;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+#recipe-list #recipe-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+#recipe-list #recipe-flters li:hover,
+#recipe-list #recipe-flters li.active-filter {
+  padding: 9px 15px;
+  color: var(--light-accent);
+  background-color: var(--red-accent);
+  border: 3px var(--primary) solid;
+  border-radius: 20px;
+}
+
+#recipe-list #recipe-flters li:last-child {
+  margin-right: 0;
+}
 
 /* /////////////////////////////////////////////////////////////////////////////
 Recipe Detail
 ///////////////////////////////////////////////////////////////////////////// */
-#recipe-detail .title-block {
-  border-bottom: solid var(--light-accent);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(217, 176, 140, 0.3);
-  border-radius: 2rem 2rem 0 0;
+#recipe-detail {
+  /* background-color: var(--light-accent); */
+  background-color: rgba(217, 176, 140, 0.8);
+  padding: 10px;
+  border-radius: 3rem;
+  color: var(--white);
 }
 
-@media (max-width: 768px) {
-  #recipe-detail .title-block {
-    margin: 5px;
-  }
+#recipe-detail .title-block {
+  border-bottom: solid var(--dark-base);
+  padding-bottom: 10px;
 }
 
 #recipe-detail .top-row {
@@ -185,7 +220,6 @@ Recipe Detail
 }
 
 #recipe-detail .recipe-details {
-  width: 50%;
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -218,22 +252,15 @@ Recipe Detail
   }
 }
 
-
 #recipe-detail .recipe-block-wrapper {
-  width: 60%;
-  background-color: rgba(217, 176, 140, 0.3);
-  padding: 2rem 10px;
-  border-radius: 0 0 2rem 2rem;
+  padding-top: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-@media (max-width: 768px) {
-  #recipe-detail .recipe-block-wrapper {
-    width: 100%;
-  }
-}
-
-#recipe-detail .recipe-block-wrapper h4 {
+#recipe-detail .recipe-section-title {
   font-size: 20px;
+  text-decoration: underline;
 }
 
 #recipe-detail .recipe-block-wrapper p {
