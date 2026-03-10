@@ -1,47 +1,67 @@
-{% extends "projects/top_navbar.html" %} {% load static %} {% block title %}
-{{project.title}} {% endblock %} {% block content %}
+{% extends "projects/top_navbar.html" %}
+{% load static %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block content %}
 
 <section id="project_detail">
-  <div class="title-block">
-    <div class="title-block-background"></div>
-    <div class="row top-row">
-      <div class="col-sm-6 order-1">
-        <div class="project-type">
-          <h3>{{ project.type }}</h3>
+  <div class="container">
+    <div class="project-header">
+      <div class="row align-items-center">
+        <div class="col-md-5 project-cover">
+          {% if project.cover_image %}
+            <img src="{{ project.cover_image.url }}" alt="{{ project.title }} cover" />
+          {% endif %}
         </div>
-      </div>
-      <div class="col-sm-6 order-2">
-        <div class="project-date">
-          <h3>{{ project.date|date:"M, Y" }}</h3>
+
+        <div class="col-md-7 project-meta">
+          <div class="meta-top d-flex justify-content-between align-items-center">
+            <div class="project-type-badge">{{ project.type }}</div>
+            <div class="project-date">{{ project.date|date:"M, Y" }}</div>
+          </div>
+          <h1 class="project-title">{{ project.title }}</h1>
+          <div class="project-tags-list">
+            {% for tag in project.tags.all %}
+            <span class="tag-badge">{{ tag }}</span>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-    <div class="project-title">
-      <h1>{{ project.title }}</h1>
-    </div>
-    <div class="project-tags-container">
-      {% for tag in project.tags.all %}
-      <div class="project-tags">
-        <p>{{ tag }}</p>
+
+    <div class="project-content">
+      {% for page in page_list %}
+      <div class="page-row row mx-0 align-items-center py-4">
+        {% if page.img and page.text %}
+        {% if forloop.counter|divisibleby:2 %}
+        <div class="col-md-5 page-img order-md-1 order-2">
+          <img src="{{ page.img.url }}" alt="{{ project.title }} image" class="img-fluid rounded" />
+        </div>
+        <div class="col-md-7 page-text order-md-2 order-1">
+          <div class="project-text-body">{{ page.text|safe|linebreaks }}</div>
+        </div>
+        {% else %}
+        <div class="col-md-7 page-text">
+          <div class="project-text-body">{{ page.text|safe|linebreaks }}</div>
+        </div>
+        <div class="col-md-5 page-img">
+          <img src="{{ page.img.url }}" alt="{{ project.title }} image" class="img-fluid rounded" />
+        </div>
+        {% endif %}
+
+        {% elif page.text %}
+        <div class="col-12 page-text">
+          <div class="project-text-body">{{ page.text|safe|linebreaks }}</div>
+        </div>
+
+        {% elif page.img %}
+        <div class="col-12 page-img">
+          <img src="{{ page.img.url }}" alt="{{ project.title }} image" class="img-fluid rounded" />
+        </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
   </div>
-  {% for page in page_list %} {% if page.text %}
-  <div class="row mx-0">
-    <div class="col-md-7 center-align">
-      <div class="text-container">
-        <div class="project-text-body">{{page.text|safe|linebreaks}}</div>
-      </div>
-    </div>
-    {% endif %} {% if page.img %}
-    <div class="col-md-5 center-align">
-      <div class="img-wrapper">
-        <img src="{{ page.img.url }}" class="d-block w-100" alt="..." />
-      </div>
-    </div>
-  </div>
-  {% endif %} {% endfor %}
 </section>
 <section id="similar-projects">
   <div class="project-carousel">

@@ -29,11 +29,13 @@
             <div class="row">
               <div class="col-md-5 px-0 img-col">
                 <div class="project-img">
-                  <img
-                    src="{{ project.cover_image.url }}"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <div class="project-cover">
+                    <img
+                      src="{{ project.cover_image.url }}"
+                      class="img-fluid"
+                      alt="{{ project.title }} cover"
+                    />
+                  </div>
                 </div>
               </div>
               <div
