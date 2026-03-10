@@ -3,26 +3,37 @@
 
 <section id="accounts">
     <div class="container accounts-container">
-        <h2>Login Page</h2>
+        <div class="login-card">
+            <div class="login-card-left">
+                <div class="section-header">
+                    <h2>Welcome Back</h2>
+                </div>
+            </div>
 
-        <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <table class="form-input-table">
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-        </table>
+            <div class="login-card-right">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
 
-        <input type="submit" value="Login">
-        </form>
+                    <div class="form-input">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
 
-        <br>
-        <p><a href="{% url 'password_reset' %}">Lost Password?</a></p>
+                    <div class="form-input">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary-btn">Login</button>
+                    </div>
+                </form>
+
+                <div class="login-links">
+                    <a href="{% url 'password_reset' %}">Forgot password?</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
