@@ -850,6 +850,15 @@ Project List
   background-color: #b64e2e;
 }
 
+#project-list .project-title {
+    font-size: 28px;
+    color: var(--light-accent);
+    text-align: center;
+    font-family: "Mochiy Pop P One", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 0.5rem;
+}
+
 #project-list .project-block:hover .project-title {
   text-decoration: underline;
 }

@@ -67,10 +67,10 @@ Recipes List
     text-align: center;
     font-family: "Mochiy Pop P One", sans-serif;
     margin-top: 5px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-#recipe-list .recipe-title:hover {
+#recipe-list .recipe-title:hover .recipe-title {
     text-decoration: underline;
 }
 
