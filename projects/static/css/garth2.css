@@ -665,7 +665,9 @@ Skills
   padding: 10px 8px;
   border: 2px var(--light-accent) solid;
   border-radius: 10px;
-  background-color: rgba(10, 167, 159, 0.1);
+  /* background-color: rgba(10, 167, 159, 0.1); */
+  background: linear-gradient(180deg, rgba(26,40,68,0.9), rgba(36,48,88,0.85));
+
 }
 
 .skill-icon {
