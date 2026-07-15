@@ -90,12 +90,28 @@ WSGI_APPLICATION = 'garthdotcom.wsgi.application'
 
 # Change this database to be the heroku one
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if (os.getenv('Local') == "True"):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('PGDATABASE'),
+            'USER': os.getenv('PGUSER'),
+            'PASSWORD': os.getenv('PGPASSWORD'),
+            'HOST': os.getenv('PGHOST'),
+            'PORT': os.getenv('PGPORT', 5432),
+            'OPTIONS': {
+                'sslmode': 'require',  # Required by Neon
+            },
+            'DISABLE_SERVER_SIDE_CURSORS': True,  # Ensures pooling compatibility        
+        }
+    }
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
