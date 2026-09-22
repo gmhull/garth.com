@@ -1,5 +1,7 @@
 {% extends "projects/index.html" %} {% load static %} {% block title %} 
-{% endblock %} {% block main %}
+{% endblock %} 
+
+{% block main %}
 <header>
   <div id="side-navbar" class="d-flex flex-column justify-content-center">
     <nav class="navbar side-nav-menu">
@@ -64,17 +66,21 @@
             </a>
             {% if user.is_authenticated %}
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'recipe_list' %}">Recipes</a></li>
-              <li>
-                <form action="{% url 'logout' %}" method="post" class="dropdown-item">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'recipe_list' %}">Recipes</a>
+              </li>
+              <li class="nav-item">
+                <form method="post" action="{% url 'logout' %}" class="d-inline">
                   {% csrf_token %}
-                  <button type="submit" class="logout-button">Logout</button>
+                  <button type="submit" class="nav-link btn btn-link border-0">Logout</button>
                 </form>
               </li>
             </ul>
             {% else %}
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
             </ul>
             {% endif %}
           </li>
@@ -87,4 +93,7 @@
 
 <div class="body-container">{% block content %} {% endblock %}</div>
 
+{% endblock %}
+
+{% block scripts %}
 {% endblock %}

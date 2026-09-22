@@ -1,6 +1,13 @@
-{% extends "recipes/top_navbar_recipe.html" %} 
+{% extends "projects/top_navbar.html" %} 
+{% load static %}
 {% block title %} Recipes {% endblock %} 
-{% load custom_filters %}{% block content %}
+{% load custom_filters %}
+
+{% block stylesheets %}
+<link href="{% static 'css/recipes.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
 
 <section id="recipe-list">
   <div class="section-header">
@@ -66,4 +73,9 @@
   </div>
 </section>
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/recipe.js' %}"></script>
 {% endblock %}

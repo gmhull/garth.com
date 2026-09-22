@@ -247,7 +247,9 @@ Top Navbar
   color: var(--white);
 }
 
-.top-nav-menu a {
+.top-nav-menu a,
+.top-nav-menu button {
+  background-color: inherit;
   color: inherit;
 }
 
@@ -262,6 +264,22 @@ Top Navbar
 .navbar-nav {
   margin-left: auto;
   margin-bottom: 0;
+}
+
+.navbar-nav .nav-link.show {
+  color: var(--light-accent);
+}
+
+.navbar-nav .dropdown-menu {
+  border-width: 0;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.dropdown-menu .nav-link::before {
+  content: "- ";
+  color: inherit;
+  font-weight: bold;
 }
 
 #top-navbar .container-fluid,
@@ -283,6 +301,7 @@ Top Navbar
 
 #top-navbar .dropdown-item {
   color: inherit;
+  background-color: var(--red-accent);
 }
 
 #top-navbar .logout-button {

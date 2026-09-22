@@ -52,9 +52,6 @@
           recipeIsotope.arrange({
             filter: this.getAttribute("data-filter"),
           });
-          recipeIsotope.on("arrangeComplete", function () {
-            AOS.refresh();
-          });
         },
         true
       );

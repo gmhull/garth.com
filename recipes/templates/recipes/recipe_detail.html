@@ -1,6 +1,14 @@
-{% extends "recipes/top_navbar_recipe.html" %} {% block title %} Recipe Detail
-{% endblock %} {% load custom_filters %}{% block content %}
+{% extends "projects/top_navbar.html" %} 
+{% load static %}
+{% block title %} Recipe Detail
+{% endblock %} 
+{% load custom_filters %}
 
+{% block stylesheets %}
+<link href="{% static 'css/recipes.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
 <section id="recipe-detail">
   <div class="title-block">
     <div class="row top-row">

@@ -1,4 +1,5 @@
 {% extends "projects/cover_page.html" %} 
+{% load static %}
 {% block title %}Garth Hull McSweeney{% endblock %} 
 
 {% block projects %} {% for project in object_list %}
@@ -20,3 +21,9 @@
   </div>
 </div>
 {% endfor %} {% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/typed.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/garth.js' %}"></script>
+{% endblock %}
